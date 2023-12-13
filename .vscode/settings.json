@@ -9,5 +9,11 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "accessibility.hideAccessibleView": false,
     "search.defaultViewMode": "list",
-    "notebook.diff.overviewRuler": false
+    "notebook.diff.overviewRuler": false,
+    "workbench.activityBar.location": "side",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "liveshare.accessibility.soundsEnabled": true,
+    "liveshare.nameTagVisibility": "Activity",
+    "zenMode.hideActivityBar": false
 }
