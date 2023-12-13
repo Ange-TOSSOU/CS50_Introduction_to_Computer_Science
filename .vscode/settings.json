@@ -2,5 +2,11 @@
     "gitdoc.enabled": true,
     "workbench.preferredDarkColorTheme": "Visual Studio Dark",
     "workbench.colorTheme": "Visual Studio Dark",
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "workbench.view.alwaysShowHeaderActions": false,
+    "editor.suggest.preview": false,
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "accessibility.hideAccessibleView": false,
+    "search.defaultViewMode": "tree"
 }
