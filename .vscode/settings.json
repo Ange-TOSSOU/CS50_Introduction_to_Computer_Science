@@ -8,5 +8,6 @@
     "workbench.editor.enablePreviewFromCodeNavigation": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "accessibility.hideAccessibleView": false,
-    "search.defaultViewMode": "tree"
+    "search.defaultViewMode": "list",
+    "notebook.diff.overviewRuler": false
 }
