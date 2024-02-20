@@ -98,12 +98,13 @@ void print_type_of_card(long n)
 int checksum(long n)
 {
     bool valid = false;
-    int m, s,digits = number_of_digits(n);
+    int m, digits = number_of_digits(n);
+    int s1 = 0, s2 = 0;
 
     m = n;
     do
     {
-        f
+        s1 += m % 100;
     }
     while (m != 0);
     sum_of_digits(n)
