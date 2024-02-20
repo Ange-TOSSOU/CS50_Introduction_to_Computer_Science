@@ -104,8 +104,7 @@ void print_type_of_card(long n)
                     if (valid)
                         printf("MASTERCARD\n");
                     break;
-                default:
-                    ;
+                default:;
             }
         }
     }
