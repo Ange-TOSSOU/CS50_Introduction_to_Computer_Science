@@ -4,7 +4,7 @@
 int number_of_digits(long n);
 int sum_of_digits(int n);
 void print_type_of_card(long n);
-int checksum(long n);
+bool checksum(long n);
 
 int main(void)
 {
@@ -52,8 +52,9 @@ void print_type_of_card(long n)
         int two_first = n / (long)pow(10, digits - 2);
         if (two_first == 34 || two_first == 37)
         {
-            valid = true;
-            printf("AMEX\n");
+            valid = checksum(n);
+            if (valid)
+                printf("AMEX\n");
         }
     }
     else if (digits == 13)
@@ -61,8 +62,9 @@ void print_type_of_card(long n)
         int one_first = n / (long)pow(10, digits - 1);
         if (one_first == 4)
         {
-            valid = true;
-            printf("VISA\n");
+            valid = checksum(n);
+            if (valid)
+                printf("VISA\n");
         }
     }
     else if (digits == 16)
@@ -71,8 +73,9 @@ void print_type_of_card(long n)
         int two_first = n / (long)pow(10, digits - 2);
         if (one_first == 4)
         {
-            valid = true;
-            printf("VISA\n");
+            valid = checksum(n);
+            if (valid)
+                printf("VISA\n");
         }
         else
         {
@@ -83,8 +86,9 @@ void print_type_of_card(long n)
                 case 53:
                 case 54:
                 case 55:
-                    valid = true;
-                    printf("MASTERCARD\n");
+                    valid = checksum(n);
+                    if (valid)
+                        printf("MASTERCARD\n");
                     break;
                 default:
             }
@@ -95,13 +99,11 @@ void print_type_of_card(long n)
         printf("INVALID\n");
 }
 
-int checksum(long n)
+bool checksum(long n)
 {
-    bool valid = false;
-    int m, digits = number_of_digits(n);
+    int digits = number_of_digits(n);
     int s = 0;
 
-    m = n;
     do
     {
         s += n % 10;
@@ -110,4 +112,9 @@ int checksum(long n)
         n /= 10;
     }
     while (n != 0);
+
+    if (s % 10 == 0)
+        return true;
+
+    return false;
 }
