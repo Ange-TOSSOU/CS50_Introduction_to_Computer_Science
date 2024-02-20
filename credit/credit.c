@@ -1,13 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int number_of_digits(long n);
+
 int main(void)
 {
-    int number = 0;
+    int number = get_long("Number: ");
+}
 
-    do
-    {
-        ...
-    }
-    while ();
+int number_of_digits(long n)
+{
+    int nd = 0;
+
+    while ()
 }
