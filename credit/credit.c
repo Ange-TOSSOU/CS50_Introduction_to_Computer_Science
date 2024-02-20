@@ -40,5 +40,23 @@ void print_type_of_card(long n)
             printf("AMEX\n");
         }
     }
-    else if (digits == 15)
+    else if (digits == 13)
+    {
+        int one_first = n / (long)pow(10, digits - 1);
+        if (one_first == 1)
+        {
+            valid = true;
+            printf("VISA\n");
+        }
+    }
+    else if (digits == 16)
+    {
+        int one_first = n / (long)pow(10, digits - 1);
+        int two_first = n / (long)pow(10, digits - 2);
+        if (two_first == 34 || two_first == 37)
+        {
+            valid = true;
+            printf("AMEX\n");
+        }
+    }
 }
