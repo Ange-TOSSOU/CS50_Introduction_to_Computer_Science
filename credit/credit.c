@@ -99,14 +99,15 @@ int checksum(long n)
 {
     bool valid = false;
     int m, digits = number_of_digits(n);
-    int s1 = 0, s2 = 0;
+    int s = 0;
 
     m = n;
     do
     {
-        m /= 10;
-        s1 += sum_of_digits(2 * (m % 10));
-        m /= 10;
+        s += n % 10;
+        n /= 10;
+        s += sum_of_digits(2 * (n % 10));
+        n /= 10;
     }
-    while (m != 0);
+    while (n != 0);
 }
