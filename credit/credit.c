@@ -28,12 +28,17 @@ int number_of_digits(long n)
 
 void print_type_of_card(long n)
 {
+    bool valid = false;
     int digits = number_of_digits(n);
 
     if (digits == 15)
     {
-        if (n / (long)pow(10, digits - 2))
-        printf("AMEX\n");
+        int two_first = n / (long)pow(10, digits - 2);
+        if (two_first == 34 || two_first == 37)
+        {
+            valid = true;
+            printf("AMEX\n");
+        }
     }
     else if (digits == 15)
 }
