@@ -6,11 +6,20 @@ int number_of_digits(long n);
 int main(void)
 {
     int number = get_long("Number: ");
+
+    int 
 }
 
 int number_of_digits(long n)
 {
-    int nd = 0;
+    int digits = 0;
 
-    while ()
+    do
+    {
+        ++digits;
+        n /= 10;
+    }
+    while (n != 0);
+
+    return digits;
 }
