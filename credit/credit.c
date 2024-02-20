@@ -31,6 +31,9 @@ void print_type_of_card(long n)
     int digits = number_of_digits(n);
 
     if (digits == 15)
+    {
+        if (n / (long))
         printf("AMEX\n");
+    }
     else if (digits == 15)
 }
