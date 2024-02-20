@@ -61,7 +61,7 @@ void print_type_of_card(long n)
     bool valid = false;
     int digits = number_of_digits(n);
 
-    printf("%i\n", digits);
+    printf("%li\n", n);
     if (digits == 15)
     {
         int two_first = n / pow_10(digits - 2);
