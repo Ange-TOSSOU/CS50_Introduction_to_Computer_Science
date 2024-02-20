@@ -104,8 +104,9 @@ int checksum(long n)
     m = n;
     do
     {
-        s1 += m % 100;
+        m /= 10;
+        s1 += sum_of_digits(2 * (m % 10));
+        m /= 10;
     }
     while (m != 0);
-    sum_of_digits(n)
 }
