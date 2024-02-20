@@ -3,6 +3,7 @@
 
 int number_of_digits(long n);
 int sum_of_digits(int n);
+long pow_10(int n);
 void print_type_of_card(long n);
 bool checksum(long n);
 
@@ -42,6 +43,19 @@ int sum_of_digits(int n)
     return sum;
 }
 
+long pow_10(int n)
+{
+    long p = 1;
+
+    while (n != 0)
+    {
+        p *= 10;
+        --n;
+    }
+
+    return p;
+}
+
 void print_type_of_card(long n)
 {
     bool valid = false;
@@ -49,7 +63,7 @@ void print_type_of_card(long n)
 
     if (digits == 15)
     {
-        int two_first = n / (long)pow(10, digits - 2);
+        int two_first = n / pow_10(digits - 2);
         if (two_first == 34 || two_first == 37)
         {
             valid = checksum(n);
@@ -59,7 +73,7 @@ void print_type_of_card(long n)
     }
     else if (digits == 13)
     {
-        int one_first = n / (long)pow(10, digits - 1);
+        int one_first = n / pow_10(digits - 1);
         if (one_first == 4)
         {
             valid = checksum(n);
@@ -69,8 +83,8 @@ void print_type_of_card(long n)
     }
     else if (digits == 16)
     {
-        int one_first = n / (long)pow(10, digits - 1);
-        int two_first = n / (long)pow(10, digits - 2);
+        int one_first = n / pow_10(digits - 1);
+        int two_first = n / pow_10(digits - 2);
         if (one_first == 4)
         {
             valid = checksum(n);
@@ -91,6 +105,7 @@ void print_type_of_card(long n)
                         printf("MASTERCARD\n");
                     break;
                 default:
+                    ;
             }
         }
     }
