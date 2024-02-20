@@ -12,7 +12,7 @@ int main(void)
         height = get_int("Height: ");
     }while(height < 1 || height > 8);
 
-    for (int i = 1; i <= h; i++)
+    for (int i = 1; i <= height; i++)
     {
         print_left(height, i);
         print_middle();
