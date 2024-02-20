@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int number_of_digits(long n);
+int sum_of_digits(int n);
 void print_type_of_card(long n);
 int checksum(long n);
 
@@ -25,6 +26,20 @@ int number_of_digits(long n)
     while (n != 0);
 
     return digits;
+}
+
+int sum_of_digits(int n)
+{
+    int sum = 0;
+
+    do
+    {
+        sum += (n % 10);
+        n /= 10;
+    }
+    while (n != 0);
+
+    return sum;
 }
 
 void print_type_of_card(long n)
@@ -83,5 +98,13 @@ void print_type_of_card(long n)
 int checksum(long n)
 {
     bool valid = false;
-    int digits = number_of_digits(n);
+    int m, s,digits = number_of_digits(n);
+
+    m = n;
+    do
+    {
+        f
+    }
+    while (m != 0);
+    sum_of_digits(n)
 }
