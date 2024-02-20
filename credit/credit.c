@@ -66,7 +66,8 @@ void print_type_of_card(long n)
         int two_first = n / pow_10(digits - 2);
         if (two_first == 34 || two_first == 37)
         {
-            valid = checksum(n);
+            valid = true;
+            //valid = checksum(n);
             if (valid)
                 printf("AMEX\n");
         }
@@ -76,7 +77,8 @@ void print_type_of_card(long n)
         int one_first = n / pow_10(digits - 1);
         if (one_first == 4)
         {
-            valid = checksum(n);
+            valid = true;
+            //valid = checksum(n);
             if (valid)
                 printf("VISA\n");
         }
@@ -87,7 +89,8 @@ void print_type_of_card(long n)
         int two_first = n / pow_10(digits - 2);
         if (one_first == 4)
         {
-            valid = checksum(n);
+            valid = true;
+            //valid = checksum(n);
             if (valid)
                 printf("VISA\n");
         }
