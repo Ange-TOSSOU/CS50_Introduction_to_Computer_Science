@@ -61,9 +61,11 @@ void print_type_of_card(long n)
     bool valid = false;
     int digits = number_of_digits(n);
 
+    printf("%i\n", digits);
     if (digits == 15)
     {
         int two_first = n / pow_10(digits - 2);
+        printf("%i\n", two_first);
         if (two_first == 34 || two_first == 37)
         {
             valid = checksum(n);
