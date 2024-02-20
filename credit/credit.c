@@ -3,6 +3,7 @@
 
 int number_of_digits(long n);
 void print_type_of_card(long n);
+int checksum(long n);
 
 int main(void)
 {
@@ -77,4 +78,10 @@ void print_type_of_card(long n)
 
     if (!valid)
         printf("INVALID\n");
+}
+
+int checksum(long n)
+{
+    bool valid = false;
+    int digits = number_of_digits(n);
 }
