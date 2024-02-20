@@ -8,9 +8,11 @@ void print_right(int n);
 int main(void)
 {
     int height = 0;
-    do {
+    do
+    {
         height = get_int("Height: ");
-    }while(height < 1 || height > 8);
+    }
+    while (height < 1 || height > 8);
 
     for (int i = 1; i <= height; i++)
     {
@@ -23,7 +25,7 @@ int main(void)
 
 void print_left(int h, int n)
 {
-    for (int i = 0; i < h-n; i++)
+    for (int i = 0; i < h - n; i++)
         printf(" ");
 
     for (int i = 0; i < n; i++)
