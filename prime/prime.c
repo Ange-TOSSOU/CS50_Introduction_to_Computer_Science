@@ -20,9 +20,9 @@ int main(void)
     while (min >= max);
 
     int i = min / 2;
-    if (min % 2 == 0)
+    if (min % 2)
     {
-        i = 2
+        i++;
     }
     for (int i = min; i <= max; i++)
     {
