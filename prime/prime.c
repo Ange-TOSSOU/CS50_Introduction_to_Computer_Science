@@ -19,6 +19,10 @@ int main(void)
     }
     while (min >= max);
 
+    if (min <= 2)
+    {
+        printf("2\n");
+    }
     for (int i = min/2; 2 * i + 1 <= max; i++)
     {
         if (prime(2 * i + 1))
