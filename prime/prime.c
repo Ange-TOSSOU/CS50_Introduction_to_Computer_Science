@@ -20,7 +20,10 @@ int main(void)
     while (min >= max);
 
     int i = min / 2;
-    if (min % 2)
+    if (min % 2 == 0)
+    {
+        i = 2
+    }
     for (int i = min; i <= max; i++)
     {
         if (prime(i))
