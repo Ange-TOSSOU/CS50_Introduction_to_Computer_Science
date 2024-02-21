@@ -19,7 +19,6 @@ int main(void)
     }
     while (min >= max);
 
-    int i 
     for (int i = min; i <= max; i++)
     {
         if (prime(i))
