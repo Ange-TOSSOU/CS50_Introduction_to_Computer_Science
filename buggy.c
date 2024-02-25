@@ -1,8 +1,10 @@
+#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
-    print_column();
+    int h = get_int("Height: ");
+    print_column(h);
 }
 
 void print_column(int height)
