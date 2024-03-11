@@ -13,3 +13,20 @@ How do you know?: TODO
 
 time ./sort1 reversed10000.txt
 real    0m0.249s
+0.295
+0.257
+0.252
+
+
+time ./sort2 reversed10000.txt
+real    0m0.071s
+0.100
+0.69
+0.61
+
+time ./sort3 reversed10000.txt
+real    0m0.154s
+0.170
+0.178
+0.166
+
