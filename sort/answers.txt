@@ -1,6 +1,6 @@
-sort1 uses: TODO
+sort1 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?:
 
 sort2 uses: Merge sort
 
@@ -42,9 +42,9 @@ So, let's compare the runtime of each sort.
 time ./sort1 sorted10000.txt
 real    0m0.249s
 1st execution : 0m0.085s
-2nd execution : 0m0.138s
+2nd execution : 0m0.082s
 3rd execution : 0m0.070s
-Average time  : 0m0.097s
+Average time  : 0m0.079s
 
 time ./sort2 sorted10000.txt
 real    0m0.071s
