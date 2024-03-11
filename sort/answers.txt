@@ -9,3 +9,7 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+
+time ./sort1 reversed10000.txt
+real    0m0.249s
