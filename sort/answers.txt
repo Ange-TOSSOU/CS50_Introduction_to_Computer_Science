@@ -1,6 +1,11 @@
 sort1 uses: Bubble sort
 
 How do you know?:
+Because we deducted that sort2 is the Merge sort and sort3 the
+Selection one.
+
+
+
 
 sort2 uses: Merge sort
 
