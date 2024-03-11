@@ -11,10 +11,35 @@ the merge sort algorithm is faster than the others.
 So, let's compare the runtime of each sort.
 
 time ./sort1 reversed10000.txt
-real    0m0.249s
 1st execution : 0m0.295s
 2nd execution : 0m0.257s
 3rd execution : 0m0.252s
+Average time  : 0m0.268s
+
+time ./sort2 reversed10000.txt
+1st execution : 0m0.100s
+2nd execution : 0m0.069s
+3rd execution : 0m0.061s
+Average time  : 0m0.076s
+
+time ./sort3 reversed10000.txt
+1st execution : 0m0.170s
+2nd execution : 0m0.178s
+3rd execution : 0m0.166s
+Average time  : 0m0.171s
+
+
+
+sort3 uses: TODO
+
+How do you know?: TODO
+
+
+time ./sort1 sorted10000.txt
+real    0m0.249s
+1st execution : 0m0.085s
+2nd execution : 0m0.138s
+3rd execution : 0m0.070s
 Average time  : 0m0.268s
 
 time ./sort2 reversed10000.txt
@@ -30,32 +55,3 @@ real    0m0.154s
 2nd execution : 0m0.178s
 3rd execution : 0m0.166s
 Average time  : 0m0.171s
-
-
-
-sort3 uses: TODO
-
-How do you know?: TODO
-
-
-time ./sort1 reversed10000.txt
-real    0m0.249s
-0m0.295s
-0m0.257s
-0m0.252s
- 0m0.268s
-
-
-time ./sort2 reversed10000.txt
-real    0m0.071s
-0m0.100s
-0m0.069s
-0m0.061s
- 0m0.076s
-
-time ./sort3 reversed10000.txt
-real    0m0.154s
-0m0.170s
-0m0.178s
-0m0.166s
- 0m0.171s
