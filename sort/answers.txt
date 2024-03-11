@@ -5,7 +5,11 @@ How do you know?: TODO
 sort2 uses: Merge sort
 
 How do you know?:
-We know that in the worst-case (in)
+
+We know that in the worst-case (when the list is in reverse order),
+the merge sort algorithm is faster than the others.
+So, let's compare the runtime of each sort.
+
 time ./sort1 reversed10000.txt
 real    0m0.249s
 1st execution : 0m0.295s
