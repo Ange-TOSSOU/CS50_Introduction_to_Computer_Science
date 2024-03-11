@@ -30,28 +30,32 @@ Average time  : 0m0.171s
 
 
 
-sort3 uses: TODO
 
-How do you know?: TODO
+sort3 uses: Selection sort
 
+How do you know?:
+
+We know that in the best-case (when the list is already sorted),
+the selection sort algorithm is slower than the others.
+So, let's compare the runtime of each sort.
 
 time ./sort1 sorted10000.txt
 real    0m0.249s
 1st execution : 0m0.085s
 2nd execution : 0m0.138s
 3rd execution : 0m0.070s
-Average time  : 0m0.268s
+Average time  : 0m0.097s
 
-time ./sort2 reversed10000.txt
+time ./sort2 sorted10000.txt
 real    0m0.071s
-1st execution : 0m0.100s
-2nd execution : 0m0.069s
-3rd execution : 0m0.061s
-Average time  : 0m0.076s
+1st execution : 0m0.090s
+2nd execution : 0m0.075s
+3rd execution : 0m0.090s
+Average time  : 0m0.085s
 
-time ./sort3 reversed10000.txt
+time ./sort3 sorted10000.txt
 real    0m0.154s
-1st execution : 0m0.170s
-2nd execution : 0m0.178s
-3rd execution : 0m0.166s
-Average time  : 0m0.171s
+1st execution : 0m0.132s
+2nd execution : 0m0.145s
+3rd execution : 0m0.136s
+Average time  : 0m0.137s
