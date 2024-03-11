@@ -2,9 +2,32 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?:
+We know that in the worst-case (in)
+time ./sort1 reversed10000.txt
+real    0m0.249s
+1st execution : 0m0.295s
+2nd execution : 0m0.257s
+3rd execution : 0m0.252s
+Average time  : 0m0.268s
+
+time ./sort2 reversed10000.txt
+real    0m0.071s
+1st execution : 0m0.100s
+2nd execution : 0m0.069s
+3rd execution : 0m0.061s
+Average time  : 0m0.076s
+
+time ./sort3 reversed10000.txt
+real    0m0.154s
+1st execution : 0m0.170s
+2nd execution : 0m0.178s
+3rd execution : 0m0.166s
+Average time  : 0m0.171s
+
+
 
 sort3 uses: TODO
 
@@ -13,22 +36,22 @@ How do you know?: TODO
 
 time ./sort1 reversed10000.txt
 real    0m0.249s
-0.295
-0.257
-0.252
- 0.268
+0m0.295s
+0m0.257s
+0m0.252s
+ 0m0.268s
 
 
 time ./sort2 reversed10000.txt
 real    0m0.071s
-0.100
-0.69
-0.61
- 0.
+0m0.100s
+0m0.069s
+0m0.061s
+ 0m0.076s
 
 time ./sort3 reversed10000.txt
 real    0m0.154s
-0.170
-0.178
-0.166
-
+0m0.170s
+0m0.178s
+0m0.166s
+ 0m0.171s
