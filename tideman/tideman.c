@@ -170,10 +170,10 @@ void sort_pairs(void)
 {
     bool reloop;
     pair tmp;
-    for (int i = pair_count - 1; i > 0; i--)
+    for (int i = 0; i < pair_count; i++)
     {
         reloop = false;
-        for (int j = i; j > 0; j--)
+        for (int j = pair_count - 1; j > i; j--)
         {
             if (preferences[pairs[j].winner][pairs[j].loser] > preferences[pairs[j - 1].winner][pairs[j - 1].loser])
             {
