@@ -179,12 +179,11 @@ void lock_pairs(void)
 {
     for (int i = 0 i < pair_count; i++)
     {
-        end_index = -1;
         for (int j = pairs[i].loser; locked[j])
     }
 }
 
-bool lock(int end_index, int cur_index)
+bool loop_back(int end_index, int cur_index)
 {
     for (int i = cur_index + 1; i < candidate_count; i++)
     {
@@ -194,7 +193,7 @@ bool lock(int end_index, int cur_index)
             return true;
         return false || lock(end_index, i)
     }
-    
+
     return false;
 }
 
