@@ -189,7 +189,7 @@ bool loop_back(int end_index, int cur_index)
     {
         if (i == cur_index)
             continue;
-        if (locked[cur_index][i])
+        if (!locked[cur_index][i])
             return false;
         if (i == end_index)
             return true;
