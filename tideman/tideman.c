@@ -31,7 +31,6 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -93,6 +92,8 @@ int main(int argc, string argv[])
     add_pairs();
     sort_pairs();
     lock_pairs();
+    for (int i = 0; i < pairs_count; i++)
+    {}
     print_winner();
     return 0;
 }
