@@ -189,7 +189,7 @@ bool loop_back(int end_index, int cur_index)
     {
         if (pairs[i].winner != cur_index)
             continue;
-        if (!locked[cur_index][pairs[i].loser])
+        if (locked[cur_index][pairs[i].loser])
         {
             if (i == end_index)
                 return true;
