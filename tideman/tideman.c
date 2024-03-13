@@ -185,8 +185,10 @@ void lock_pairs(void)
 
 bool loop_back(int end_index, int cur_index)
 {
-    for (int i = cur_index + 1; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
+        if (i == cur_index)
+            continue;
         if (locked[cur_index][i])
             return false;
         if (i == end_index)
