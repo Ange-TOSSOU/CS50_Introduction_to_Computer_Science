@@ -131,7 +131,7 @@ void add_pairs(void)
     // pair_count = candidate_count * (candidate_count - 1) / 2;
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < i; j++)
         {
             if (j != i)
             {
