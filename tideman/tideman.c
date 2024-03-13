@@ -102,7 +102,7 @@ int main(int argc, string argv[])
         }
         printf("\n");
     }
-    printf("\n");
+    printf("\n");*/
 
     for (int i = 0; i < candidate_count; i++)
     {
@@ -111,7 +111,7 @@ int main(int argc, string argv[])
             printf("%i ", locked[i][j]);
         }
         printf("\n");
-    }*/
+    }
     print_winner();
     return 0;
 }
