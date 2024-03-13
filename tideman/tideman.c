@@ -94,7 +94,7 @@ int main(int argc, string argv[])
     sort_pairs();
     lock_pairs();
 
-    for (int i = 0; i < candidate_count; i++)
+    /*for (int i = 0; i < candidate_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
         {
@@ -111,7 +111,7 @@ int main(int argc, string argv[])
             printf("%i ", locked[i][j]);
         }
         printf("\n");
-    }
+    }*/
     print_winner();
     return 0;
 }
