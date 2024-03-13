@@ -172,7 +172,6 @@ void sort_pairs(void)
             break;
         }
     }
-    return;
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
