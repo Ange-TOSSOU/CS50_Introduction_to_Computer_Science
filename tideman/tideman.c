@@ -193,7 +193,7 @@ bool loop_back(int end_index, int cur_index)
         {
             if (pairs[i].loser == end_index)
                 return true;
-            return false || lock(end_index, pairs[i].winner)
+            return false || lock(end_index, pairs[i].loser)
         }
     }
 
