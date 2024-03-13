@@ -131,6 +131,7 @@ void add_pairs(void)
     pair_count = candidate_count * (candidate_count - 1) / 2;
     for (int i = 0; i < pair_count; i++)
     {
+        if (preferences[i])
     }
     return;
 }
