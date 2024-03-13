@@ -186,10 +186,16 @@ void lock_pairs(void)
 
 bool lock(int end_index, int cur_index)
 {
-    for (int i = cur_index; i < candidate_count; i++)
+    for (int i = cur_index + 1; i < candidate_count; i++)
     {
-        if (!locked[j])
+        if (locked[cur_index][i])
+            return false;
+        if (i == end_index)
+            return true;
+        return false || lock(end_index, i)
     }
+    
+    return false;
 }
 
 // Print the winner of the election
