@@ -31,6 +31,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
+
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -179,7 +180,10 @@ void lock_pairs(void)
 {
     for (int i = 0 i < pair_count; i++)
     {
-        for (int j = pairs[i].loser; locked[j])
+        if (!loop_back(pairs[i].winner, pairs[i].loser))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
     }
 }
 
@@ -193,7 +197,7 @@ bool loop_back(int end_index, int cur_index)
         {
             if (pairs[i].loser == end_index)
                 return true;
-            return false || lock(end_index, pairs[i].loser)
+            return false || loop_back(end_index, pairs[i].loser)
         }
     }
 
