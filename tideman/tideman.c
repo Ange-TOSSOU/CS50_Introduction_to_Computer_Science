@@ -223,6 +223,22 @@ bool loop_back(int end_index, int cur_index)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+    bool is_winner;
+    for (int j = 0; j < candidate_count; j++)
+    {
+        is_winner = true;
+        for (int i = 0; j < candidate_count; j++)
+        {
+            if (locked[i][j])
+            {
+                is_winner = false;
+                break;
+            }
+        }
+        if (is_winner)
+        {
+            printf("%s\n", candidates[j]);
+            break;
+        }
+    }
 }
