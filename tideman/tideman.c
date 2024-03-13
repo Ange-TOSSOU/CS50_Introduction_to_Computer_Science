@@ -92,7 +92,6 @@ int main(int argc, string argv[])
 
     add_pairs();
     sort_pairs();
-    printf("TEST\n");
     lock_pairs();
 
     for (int i = 0; i < candidate_count; i++)
@@ -171,10 +170,10 @@ void sort_pairs(void)
 {
     bool reloop;
     pair tmp;
-    for (int i = pair_count - 1; i > 0; i++)
+    for (int i = pair_count - 1; i > 0; i--)
     {
         reloop = false;
-        for (int j = i; j > 0; j++)
+        for (int j = i; j > 0; j--)
         {
             if (preferences[pairs[j].winner][pairs[j].loser] > preferences[pairs[j - 1].winner][pairs[j - 1].loser])
             {
