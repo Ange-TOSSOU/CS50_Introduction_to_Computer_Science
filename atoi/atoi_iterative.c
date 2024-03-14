@@ -25,13 +25,13 @@ int main(void)
 
 int convert(string input)
 {
-    int last_char_index = strlen(input) - 1;
+    int number = 0, base_product = 1;
 
-    if (last_char_index < 0)
+    for (int i = strlen(input) - 1; i >= 0; i--)
     {
-        return 0;
+        number += base_product * input[i];
+        base_product *= 10;
     }
 
-    int digit = 10 *
-    return input[]
+    return number;
 }
