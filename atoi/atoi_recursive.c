@@ -4,6 +4,7 @@
 #include <string.h>
 
 int convert(string input);
+int convert_service(string input, int base_product);
 
 int main(void)
 {
@@ -24,26 +25,17 @@ int main(void)
 
 int convert(string input)
 {
-    int number = 0, base_product = 1;
-
-    for (int i = strlen(input) - 1; i >= 0; i--)
-    {
-        number += base_product * (input[i] - '0');
-        base_product *= 10;
-    }
-
-    return number;
+    return convert_service(input, 1);
 }
 
-int convert_service(string input, int )
+int convert_service(string input, int base_product)
 {
-    int number = 0, base_product = 1;
+    int last_char_index = strlen(input) - 1;
 
-    for (int i = strlen(input) - 1; i >= 0; i--)
-    {
-        number += base_product * (input[i] - '0');
-        base_product *= 10;
-    }
+    if (last_char_index < 0)
+        return 0;
 
-    return number;
+    int n = base_product * (input[last_char_index] - '0');
+    input[last_char_index] = '\0';
+    return n + convert_service(input, base_product * 10);
 }
