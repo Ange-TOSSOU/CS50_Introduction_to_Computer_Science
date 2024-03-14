@@ -156,7 +156,8 @@ void sort_pairs(void)
         reloop = false;
         for (int j = pair_count - 1; j > i; j--)
         {
-            if (preferences[pairs[j].winner][pairs[j].loser] > preferences[pairs[j - 1].winner][pairs[j - 1].loser])
+            if (preferences[pairs[j].winner][pairs[j].loser] >
+                preferences[pairs[j - 1].winner][pairs[j - 1].loser])
             {
                 tmp = pairs[j - 1];
                 pairs[j - 1] = pairs[j];
