@@ -63,7 +63,7 @@ int main(void)
 void sort_cities(void)
 {
     bool stop;
-    temps tmp;
+    avg_temp tmp;
     // Using Bubble sort algorithm
     for (int i = NUM_CITIES; i > 0; i--)
     {
