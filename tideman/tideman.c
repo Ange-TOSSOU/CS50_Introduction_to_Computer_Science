@@ -205,15 +205,25 @@ void lock_pairs(void)
 
 bool loop_back(int end_index, int cur_index)
 {
+    if (cur_index == end_index)
+    {
+        return true;
+    }
     for (int i = 0; i < pair_count; i++)
     {
         if (pairs[i].winner != cur_index)
             continue;
         if (locked[cur_index][pairs[i].loser])
         {
-            if (pairs[i].loser == end_index)
+            /*if (pairs[i].loser == end_index)
+            {
                 return true;
-            return false || loop_back(end_index, pairs[i].loser);
+            }
+            return false || loop_back(end_index, pairs[i].loser);*/
+            if (loop_back(end_index, pairs[i].loser))
+            {
+                return true;
+            }
         }
     }
 
