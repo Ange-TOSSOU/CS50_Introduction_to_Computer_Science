@@ -205,6 +205,7 @@ void lock_pairs(void)
 
 bool loop_back(int end_index, int cur_index)
 {
+    bool is_looping = false;
     for (int i = 0; i < pair_count; i++)
     {
         if (pairs[i].winner != cur_index)
@@ -215,11 +216,13 @@ bool loop_back(int end_index, int cur_index)
             {
                 return true;
             }
-            return false || loop_back(end_index, pairs[i].loser);
+            is_looping = loop_back(end_index, pairs[i].loser);
+            if (is_looping)
+                break;
         }
     }
 
-    return false;
+    return is_looping;
 }
 
 // Print the winner of the election
