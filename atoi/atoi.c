@@ -25,5 +25,13 @@ int main(void)
 
 int convert(string input)
 {
-    // TODO
+    int last_char_index = strlen(input) - 1;
+
+    if (last_char_index < 0)
+    {
+        return 0;
+    }
+
+    int digit = 10 *
+    return input[]
 }
