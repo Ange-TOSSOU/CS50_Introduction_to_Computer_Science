@@ -34,3 +34,16 @@ int convert(string input)
 
     return number;
 }
+
+int convert_service(string input, int )
+{
+    int number = 0, base_product = 1;
+
+    for (int i = strlen(input) - 1; i >= 0; i--)
+    {
+        number += base_product * (input[i] - '0');
+        base_product *= 10;
+    }
+
+    return number;
+}
