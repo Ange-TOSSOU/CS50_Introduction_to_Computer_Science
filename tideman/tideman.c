@@ -31,8 +31,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-// bool loop_back(int end_index, int cur_index);
-bool cycle(int end, int cycle_start);
+bool loop_back(int end_index, int cur_index);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -193,7 +192,7 @@ void sort_pairs(void)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
-/*void lock_pairs(void)
+void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
@@ -219,40 +218,6 @@ bool loop_back(int end_index, int cur_index)
     }
 
     return false;
-}*/
-
-bool cycle(int end, int cycle_start)
-{
-    // Return true if there is a cycle created (Recursion base case)
-    if (end == cycle_start)
-    {
-        return true;
-    }    // Loop through candidates (Recursive case)
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (locked[end][i])
-        {
-            if (cycle(i, cycle_start))
-            {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-void lock_pairs(void)
-{
-    // Loop through pairs
-    for (int i = 0; i < pair_count; i++)
-    {
-        // If cycle function returns false, lock the pair
-        if (!cycle(pairs[i].loser, pairs[i].winner))
-        {
-            locked[pairs[i].winner][pairs[i].loser] = true;
-        }
-    }
-    return;
 }
 
 // Print the winner of the election
