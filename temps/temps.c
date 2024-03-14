@@ -62,6 +62,18 @@ int main(void)
 // TODO: Sort cities by temperature in descending order
 void sort_cities(void)
 {
+    temps tmp;
     // Using Bubble sort algorithm
-    for (int i = 0; )
+    for (int i = NUM_CITIES; i > 0; i--)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (temps[j].temp < temps[j + 1].temp)
+            {
+                tmp = temps[j];
+                temps[j] = temps[j + 1];
+                temps[j + 1] = tmp;
+            }
+        }
+    }
 }
