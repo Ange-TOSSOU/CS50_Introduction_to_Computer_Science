@@ -218,12 +218,12 @@ bool loop_back(int end_index, int cur_index)
             /*if (pairs[i].loser == end_index)
             {
                 return true;
-            }
-            return false || loop_back(end_index, pairs[i].loser);*/
-            if (loop_back(end_index, pairs[i].loser))
+            }*/
+            return false || loop_back(end_index, pairs[i].loser);
+            /*if (loop_back(end_index, pairs[i].loser))
             {
                 return true;
-            }
+            }*/
         }
     }
 
