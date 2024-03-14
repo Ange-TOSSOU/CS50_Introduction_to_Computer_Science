@@ -29,7 +29,7 @@ int convert(string input)
 
     for (int i = strlen(input) - 1; i >= 0; i--)
     {
-        number += base_product * input[i];
+        number += base_product * (input[i] - '0');
         base_product *= 10;
     }
 
