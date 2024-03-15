@@ -41,7 +41,7 @@ void add_items(void);
 // Calculate total cost
 float get_cost(string item);
 
-string strcmpnoncasesensetive(string s1, string s2)
+string strcmpnoncasesensetive(string s1, string s2);
 
 int main(void)
 {
@@ -120,14 +120,15 @@ float get_cost(string item)
     return 0.0;
 }
 
-string strcmpnoncasesensetive(string s1, string s2)
+int strcmpnoncasesensetive(string s1, string s2)
 {
     int len1 = strlen(s1);
     int len2 = strlen(s2);
-    for (int i = 0; i < len; i++)
+    for (int i = 0; i < len1 && i < len2; i++)
     {
-        new_input[i] = (char)tolower(new_input[i]);
+        if (tolower(s1[i]) != tolower(s2[i]))
+            return tolower(s1[i]) - tolower(s2[i]);
     }
 
-    return new_input;
+    return 0;
 }
