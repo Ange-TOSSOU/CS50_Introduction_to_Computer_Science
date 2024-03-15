@@ -41,6 +41,9 @@ void add_items(void);
 // Calculate total cost
 float get_cost(string item);
 
+// Convert all characters of a string in lowercase
+string alltolower(string input);
+
 int main(void)
 {
     add_items();
@@ -109,10 +112,25 @@ float get_cost(string item)
 {
     for (int i = 0; i < NUM_ITEMS; i++)
     {
-        if ()
+        if (strcmp(alltolower(item), alltolower(menu[i].item)) == 0)
+        {
+            return menu[i].price;
+        }
     }
 
     return 0.0;
 }
 
-string alltolower
+string alltolower(string input)
+{
+    string new_input;
+    strcpy(new_input, input);
+
+    int len = strlen(new_input);
+    for (int i = 0; i < len; i++)
+    {
+        new_input[i] = (char)tolower(new_input[i]);
+    }
+
+    return new_input;
+}
