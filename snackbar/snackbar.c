@@ -41,8 +41,7 @@ void add_items(void);
 // Calculate total cost
 float get_cost(string item);
 
-// Convert all characters of a string in lowercase
-string alltolower(string input);
+string strcmpnoncasesensetive(string s1, string s2)
 
 int main(void)
 {
@@ -112,7 +111,7 @@ float get_cost(string item)
 {
     for (int i = 0; i < NUM_ITEMS; i++)
     {
-        if (strcmp(alltolower(item), alltolower(menu[i].item)) == 0)
+        if (strcmpnoncasesensetive(item, menu[i].item) == 0)
         {
             return menu[i].price;
         }
@@ -121,11 +120,8 @@ float get_cost(string item)
     return 0.0;
 }
 
-string alltolower(string input)
+string strcmpnoncasesensetive(string s1, string s2)
 {
-    string new_input;
-    strcpy(new_input, input);
-
     int len = strlen(new_input);
     for (int i = 0; i < len; i++)
     {
