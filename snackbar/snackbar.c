@@ -122,7 +122,8 @@ float get_cost(string item)
 
 string strcmpnoncasesensetive(string s1, string s2)
 {
-    int len = strlen(new_input);
+    int len1 = strlen(s1);
+    int len2 = strlen(s2);
     for (int i = 0; i < len; i++)
     {
         new_input[i] = (char)tolower(new_input[i]);
