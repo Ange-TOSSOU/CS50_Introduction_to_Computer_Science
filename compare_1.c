@@ -7,12 +7,6 @@ int main(void)
     string s = get_string("s: ");
     string t = get_string("t: ");
 
-    if (strcmp(s, t) == 0)
-    {
-        printf("Same\n");
-    }
-    else
-    {
-        printf("Different\n");
-    }
+    printf("%s\n", s);
+    printf("%s\n", t);
 }
