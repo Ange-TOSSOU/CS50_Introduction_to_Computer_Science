@@ -15,5 +15,8 @@
     "workbench.activityBar.iconClickBehavior": "toggle",
     "liveshare.accessibility.soundsEnabled": true,
     "liveshare.nameTagVisibility": "Activity",
-    "zenMode.hideActivityBar": false
+    "zenMode.hideActivityBar": false,
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
