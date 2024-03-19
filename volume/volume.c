@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     if (output == NULL)
     {
         printf("Could not open file.\n");
-        // Close the input file before exiting
+        // !!!! Close the input file before exiting !!!!
         fclose(input);
         return 1;
     }
