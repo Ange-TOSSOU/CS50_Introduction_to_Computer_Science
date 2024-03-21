@@ -79,10 +79,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    /*RGBTRIPLE mean;
     const int n = 3;
     int kernel_x[n][n] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int kernel_y[n][n] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+    int b, g, r;
     int x, y;
 
     RGBTRIPLE(*image_edge)[width] = calloc(height, width * sizeof(RGBTRIPLE));
@@ -91,7 +91,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            mean.rgbtBlue = mean.rgbtGreen = mean.rgbtRed = 0;
+            b = g = r = 0;
             for (int k = 0; k < n ; k++)
             {
                 x = k + i - 1;
@@ -100,9 +100,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     y = l + j - 1;
                     if (0 <= x && x < height && 0 <= y && y < width)
                     {
-                        mean.rgbtBlue += image[k][l].rgbtBlue;
-                        mean.rgbtGreen += image[k][l].rgbtGreen;
-                        mean.rgbtRed += image[k][l].rgbtRed;
+                        b += image[k][l].rgbtBlue;
+                        g += image[k][l].rgbtGreen;
+                        r += image[k][l].rgbtRed;
                         n++;
                     }
                 }
@@ -121,5 +121,5 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             image[i][j] = image_edge[i][j];
         }
-    }*/
+    }
 }
