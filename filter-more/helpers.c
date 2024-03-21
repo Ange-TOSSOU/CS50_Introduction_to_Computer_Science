@@ -74,6 +74,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j] = image_blur[i][j];
         }
     }
+
+    free(image_blur);
 }
 
 /*void blur(int height, int width, RGBTRIPLE image[height][width])
