@@ -112,9 +112,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            image_edge[i][j].rgbtBlue = (BYTE)lrint(sqrt(pow(bx, 2), pow(by, 2)));
-            image_edge[i][j].rgbtGreen = (BYTE)lrint(sqrt(pow(gx, 2), pow(gy, 2)));
-            image_edge[i][j].rgbtRed = (BYTE)lrint(sqrt(pow(rx, 2), pow(ry, 2)));
+            image_edge[i][j].rgbtBlue = (BYTE)lrint(sqrt(pow(bx, 2) + pow(by, 2)));
+            image_edge[i][j].rgbtGreen = (BYTE)lrint(sqrt(pow(gx, 2) + pow(gy, 2)));
+            image_edge[i][j].rgbtRed = (BYTE)lrint(sqrt(pow(rx, 2) + pow(ry, 2)));
         }
     }
 
