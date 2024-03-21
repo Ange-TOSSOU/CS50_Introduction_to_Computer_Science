@@ -10,7 +10,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         {
             mean = image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed;
             mean /= 3;
-            image[i][j].rgbtBlue = image[i][j].rgbtGreen = image[i][j].rgbtRed = ;
+            image[i][j].rgbtBlue = image[i][j].rgbtGreen = image[i][j].rgbtRed = (BYTE)lrint(mean);
         }
     }
 }
