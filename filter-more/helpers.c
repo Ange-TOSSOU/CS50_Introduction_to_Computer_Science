@@ -20,14 +20,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE tmp;
     int lim = width / 2;
-    for (int i = 0; i < lim; i++)
+    for (int j = 0; j < lim; j++)
     {
-        for (int j = 0; j < width; j++)
+        for (int i = 0; i < height; i++)
         {
-            tmp =
-            mean = image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed;
-            mean /= 3;
-            image[i][j].rgbtBlue = image[i][j].rgbtGreen = image[i][j].rgbtRed = (BYTE)lrint(mean);
+            tmp = image[i][j];
         }
     }
 }
