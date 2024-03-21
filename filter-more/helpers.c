@@ -20,9 +20,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE tmp;
     int lim = width / 2;
-    for (int j = 0; j < lim; j++)
+    for (int j = 0; j < height; j++)
     {
-        for (int i = 0; i < height; i++)
+        for (int i = 0; i < lim; i++)
         {
             tmp = image[i][j];
             image[i][j] = image[i][j];
