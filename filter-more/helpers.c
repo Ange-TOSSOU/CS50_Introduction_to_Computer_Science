@@ -120,6 +120,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     const int n = 3;
     int kernel_x[n][n] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int kernel_y[n][n] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+    int x, y;
+
+    RGBTRIPLE(*image_edge)[width] = calloc(height, width * sizeof(RGBTRIPLE));
 
     for (int i = 0; i < height; i++)
     {
@@ -128,9 +131,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             mean.rgbtBlue = mean.rgbtGreen = mean.rgbtRed = 0;
             for (int k = 0; k < n ; k++)
             {
+                x = k + i - 1;
                 for (int l = 0; l < n; l++)
                 {
-                    if (0 <= k && k < height && 0 <= l && l < width)
+                    y = l + j - 1;
+                    if (0 <= x && x < height && 0 <= y && y < width)
                     {
                         mean.rgbtBlue += image[k][l].rgbtBlue;
                         mean.rgbtGreen += image[k][l].rgbtGreen;
@@ -143,7 +148,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             mean.rgbtGreen = (BYTE)lrint((double)mean.rgbtGreen / n);
             mean.rgbtRed = (BYTE)lrint((double)mean.rgbtRed / n);
 
-            image[i][j] = mean;
+            image_edge[i][j] = mean;
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = image_edge[i][j];
         }
     }
 }
