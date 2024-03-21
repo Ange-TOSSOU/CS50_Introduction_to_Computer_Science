@@ -1,15 +1,17 @@
-#include <cs50.h>
 #include <stdio.h>
 
+typedef struct
+{
+    double x;
+    double y;
+}Point;
 int main(void)
 {
-    string name;
-
-    name = "Thor";
-    printf("Name: %s\n", name);
-
-    name = "Flash";
-    printf("Name: %s\n", name);
-
+    Point a = {1, 2}, b = {0, 7};
+    printf("a = (%.2f %.2f)\n", b.x, a.y);
+    printf("b = (%.2f %.2f)\n", b.x, b.y);
+    a = b;
+    printf("a = (%.2f %.2f)\n", b.x, a.y);
+    printf("b = (%.2f %.2f)\n", b.x, b.y);
     return 0;
 }
