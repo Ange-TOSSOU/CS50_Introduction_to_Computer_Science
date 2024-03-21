@@ -34,7 +34,33 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    RGBTRIPLE(*image_blur)[width] = calloc(height, width * sizeof(RGBTRIPLE));
+    RGBTRIPLE mean;
+    int height_c, width_c;
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            mean.rgbtBlue = mean.rgbtGreen = mean.rgbtRed = 0;
+            height_c = i + 1;
+            width_c = j + 1;
+            for (int k = i - 1; k <= height_c ; k++)
+            {
+                for (int l = j - 1; l < width_c; l++)
+                {
+                    if (0 <= k && k < height && 0 <= l && l < width)
+                    {
+                        mean.rgbtBlue += image[k][l].rgbtBlue;
+                        mean.rgbtGreen += image[k][l].rgbtGreen;
+                        mean.rgbtRed = image[k][l].rgbtRed;
+                    }
+                }
+            }
+            mean.rgbtBlue += image[k][l].rgbtBlue;
+            mean.rgbtGreen += image[k][l].rgbtGreen;
+            mean.rgbtRed = image[k][l].rgbtRed;
+        }
+    }
 }
 
 // Detect edges
