@@ -82,7 +82,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     const int n = 3;
     int kernel_x[n][n] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int kernel_y[n][n] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
-    int b, g, r;
+    int bx, gx, rx;
+    int by, gy, ry;
     int x, y;
 
     RGBTRIPLE(*image_edge)[width] = calloc(height, width * sizeof(RGBTRIPLE));
@@ -91,7 +92,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            b = g = r = 0;
+            bx = gx = rx = 0;
+            by = gy = ry = 0;
             for (int k = 0; k < n ; k++)
             {
                 x = k + i - 1;
@@ -100,18 +102,19 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     y = l + j - 1;
                     if (0 <= x && x < height && 0 <= y && y < width)
                     {
-                        b += image[k][l].rgbtBlue;
-                        g += image[k][l].rgbtGreen;
-                        r += image[k][l].rgbtRed;
-                        n++;
+                        bx += kernel_x[k][l] * image[x][y].rgbtBlue;
+                        gx += kernel_x[k][l] * image[x][y].rgbtGreen;
+                        rx += kernel_x[k][l] * image[x][y].rgbtRed;
+                        by += kernel_y[k][l] * image[x][y].rgbtBlue;
+                        gy += kernel_y[k][l] * image[x][y].rgbtGreen;
+                        ry += kernel_y[k][l] * image[x][y].rgbtRed;
                     }
                 }
             }
-            mean.rgbtBlue = (BYTE)lrint((double)mean.rgbtBlue / n);
-            mean.rgbtGreen = (BYTE)lrint((double)mean.rgbtGreen / n);
-            mean.rgbtRed = (BYTE)lrint((double)mean.rgbtRed / n);
 
-            image_edge[i][j] = mean;
+            image_edge[i][j].rgbtBlue = (BYTE)lrint(sqrt(pow(bx, 2), pow(by, 2)));
+            image_edge[i][j].rgbtGreen = (BYTE)lrint(sqrt(pow(gx, 2), pow(gy, 2)));
+            image_edge[i][j].rgbtRed = (BYTE)lrint(sqrt(pow(rx, 2), pow(ry, 2)));
         }
     }
 
