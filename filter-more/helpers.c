@@ -106,15 +106,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             mean.rgbtGreen = (BYTE)lrint((double)mean.rgbtGreen / n);
             mean.rgbtRed = (BYTE)lrint((double)mean.rgbtRed / n);
 
-            image_blur[i][j] = mean;
-        }
-    }
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            image[i][j] = image_blur[i][j];
+            image[i][j] = mean;
         }
     }
 }
