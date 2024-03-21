@@ -116,5 +116,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    const int n = 3;
+    int kernel_x[n][n] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int kernel_y[n][n] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 }
