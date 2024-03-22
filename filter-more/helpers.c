@@ -15,7 +15,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             mean /= 3;
 
             // Update the pixel
-            image[i][j].rgbtBlue = image[i][j].rgbtGreen = image[i][j].rgbtRed = (BYTE)round(mean);
+            image[i][j].rgbtBlue = image[i][j].rgbtGreen = image[i][j].rgbtRed = (BYTE) round(mean);
         }
     }
 }
@@ -54,7 +54,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             b = g = r = 0;
             width_c = j + 1;
             // Calculate the blurring pixel corresponding
-            for (int k = i - 1; k <= height_c ; k++)
+            for (int k = i - 1; k <= height_c; k++)
             {
                 for (int l = j - 1; l <= width_c; l++)
                 {
@@ -69,9 +69,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Save the new pixel obtained
-            image_blur[i][j].rgbtBlue = (BYTE)round((double)b / n);
-            image_blur[i][j].rgbtGreen = (BYTE)round((double)g / n);
-            image_blur[i][j].rgbtRed = (BYTE)round((double)r / n);
+            image_blur[i][j].rgbtBlue = (BYTE) round((double) b / n);
+            image_blur[i][j].rgbtGreen = (BYTE) round((double) g / n);
+            image_blur[i][j].rgbtRed = (BYTE) round((double) r / n);
         }
     }
 
@@ -106,7 +106,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             bx = gx = rx = 0;
             by = gy = ry = 0;
-            for (int k = 0; k < n ; k++)
+            for (int k = 0; k < n; k++)
             {
                 x = k + i - 1;
                 for (int l = 0; l < n; l++)
@@ -129,21 +129,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 result = 255;
             }
-            image_edge[i][j].rgbtBlue = (BYTE)result;
+            image_edge[i][j].rgbtBlue = (BYTE) result;
 
             result = round(sqrt(pow(gx, 2) + pow(gy, 2)));
             if (result > 255)
             {
                 result = 255;
             }
-            image_edge[i][j].rgbtGreen = (BYTE)result;
+            image_edge[i][j].rgbtGreen = (BYTE) result;
 
             result = round(sqrt(pow(rx, 2) + pow(ry, 2)));
             if (result > 255)
             {
                 result = 255;
             }
-            image_edge[i][j].rgbtRed = (BYTE)result;
+            image_edge[i][j].rgbtRed = (BYTE) result;
         }
     }
 
