@@ -61,9 +61,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            image_blur[i][j].rgbtBlue = (BYTE)lrint((double)b / n);
-            image_blur[i][j].rgbtGreen = (BYTE)lrint((double)g / n);
-            image_blur[i][j].rgbtRed = (BYTE)lrint((double)r / n);
+            image_blur[i][j].rgbtBlue = (BYTE)round((double)b / n);
+            image_blur[i][j].rgbtGreen = (BYTE)round((double)g / n);
+            image_blur[i][j].rgbtRed = (BYTE)round((double)r / n);
         }
     }
 
