@@ -29,7 +29,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < lim; j++)
         {
-            // Reverse the [i][j] pixel and its sy
+            // Reverse the [i][j] pixel and its symmetric at [i][width - 1 - j]
             tmp = image[i][j];
             image[i][j] = image[i][width - 1 - j];
             image[i][width - 1 - j] = tmp;
@@ -44,6 +44,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int b, g, r;
     int height_c, width_c;
     int n;
+
     for (int i = 0; i < height; i++)
     {
         height_c = i + 1;
