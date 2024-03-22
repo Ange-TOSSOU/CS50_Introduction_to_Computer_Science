@@ -117,6 +117,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         bx += kernel_x[k][l] * image[x][y].rgbtBlue;
                         gx += kernel_x[k][l] * image[x][y].rgbtGreen;
                         rx += kernel_x[k][l] * image[x][y].rgbtRed;
+
                         by += kernel_y[k][l] * image[x][y].rgbtBlue;
                         gy += kernel_y[k][l] * image[x][y].rgbtGreen;
                         ry += kernel_y[k][l] * image[x][y].rgbtRed;
