@@ -42,7 +42,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE(*image_blur)[width] = calloc(height, width * sizeof(RGBTRIPLE));
     int b, g, r;
-    int height_c, width_c;
+    int height_c, width_c; // Dimensions of the 3x3 neighboring pixels
     int n;
 
     for (int i = 0; i < height; i++)
@@ -66,12 +66,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            
+            // Save the new pixel obtained
             image_blur[i][j].rgbtBlue = (BYTE)round((double)b / n);
             image_blur[i][j].rgbtGreen = (BYTE)round((double)g / n);
             image_blur[i][j].rgbtRed = (BYTE)round((double)r / n);
         }
     }
 
+    // Update the original pixels from the bluring pixels
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
