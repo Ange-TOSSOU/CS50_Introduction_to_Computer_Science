@@ -87,6 +87,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int bx, gx, rx;
     int by, gy, ry;
     int x, y;
+    int result;
 
     RGBTRIPLE(*image_edge)[width] = calloc(height, width * sizeof(RGBTRIPLE));
 
@@ -114,9 +115,26 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            image_edge[i][j].rgbtBlue = (BYTE)round(sqrt(pow(bx, 2) + pow(by, 2)));
-            image_edge[i][j].rgbtGreen = (BYTE)round(sqrt(pow(gx, 2) + pow(gy, 2)));
-            image_edge[i][j].rgbtRed = (BYTE)round(sqrt(pow(rx, 2) + pow(ry, 2)));
+            result = round(sqrt(pow(bx, 2) + pow(by, 2)));
+            if (result > 255)
+            {
+                result = 255;
+            }
+            image_edge[i][j].rgbtBlue = (BYTE)result;
+
+            result = round(sqrt(pow(gx, 2) + pow(gy, 2)));
+            if (result > 255)
+            {
+                result = 255;
+            }
+            image_edge[i][j].rgbtGreen = (BYTE)result;
+
+            result = round(sqrt(pow(rx, 2) + pow(ry, 2)));
+            if (result > 255)
+            {
+                result = 255;
+            }
+            image_edge[i][j].rgbtRed = (BYTE)result;
         }
     }
 
