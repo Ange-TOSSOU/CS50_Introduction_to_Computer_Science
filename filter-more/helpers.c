@@ -53,6 +53,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             n = 0;
             b = g = r = 0;
             width_c = j + 1;
+            // Calculate the blurring pixel corresponding
             for (int k = i - 1; k <= height_c ; k++)
             {
                 for (int l = j - 1; l <= width_c; l++)
@@ -66,7 +67,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            
+
             // Save the new pixel obtained
             image_blur[i][j].rgbtBlue = (BYTE)round((double)b / n);
             image_blur[i][j].rgbtGreen = (BYTE)round((double)g / n);
