@@ -65,6 +65,11 @@ int main(int argc, char *argv[])
             }
         }
     }
+    if (i != 0)
+    {
+        // Close the last file opened
+        fclose(f);
+    }
 
     fclose(card);
 }
