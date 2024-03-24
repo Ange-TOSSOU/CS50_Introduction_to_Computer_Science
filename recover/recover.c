@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
                 fclose(card);
                 return 1;
             }
-            fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
+            fwrite(buffer, JPEG_BLOCK_SIZE, 1, f);
             fclose(f);
             clean(buffer, JPEG_BLOCK_SIZE);
             i++;
