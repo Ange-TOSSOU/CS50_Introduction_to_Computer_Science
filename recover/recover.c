@@ -73,7 +73,7 @@ int is_jpeg(BYTE *buffer)
         return 0;
     }
 
-    if (!(0xe0 <= buffer[3] && buffer[3] <= 0xef))
+    if (buffer[3] & 0xf0 != 0xe0)
     {
         return 0;
     }
