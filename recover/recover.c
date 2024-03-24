@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
         {
             if (f != NULL)
             {
-                fwrite(buffer, JPEG_BLOCK_SIZE, 1, f);
+                fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
             }
         }
     }
