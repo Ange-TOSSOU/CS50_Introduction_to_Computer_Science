@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
         f = fopen(file_name, "w");
         if (f == NULL)
         {
+            printf("Error : ");
             fclose(card);
             return 1;
         }
