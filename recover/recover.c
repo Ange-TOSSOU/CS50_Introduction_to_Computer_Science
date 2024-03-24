@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
     FILE *f = NULL;
     // While there's still data left to read from the memory card
-    while (fread(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, card) == JPEG_BLOCK_SIZE)
+    while (fread(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, card) == sizeof(BYTE) * JPEG_BLOCK_SIZE)
     {
         // Verify if it is a JPEG file
         if (is_jpeg(buffer))
