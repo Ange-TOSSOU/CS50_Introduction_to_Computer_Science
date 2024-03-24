@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
                 fclose(card);
                 return 2;
             }
+            fwrite(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, f);
         }
         else
         {
