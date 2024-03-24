@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
         f = fopen(file_name, "w");
         if (f == NULL)
         {
-            printf("Error : ");
+            printf("Odds are there is no longer spaces in memory to recover images.");
             fclose(card);
             return 1;
         }
