@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
         if (is_jpeg(buffer))
         {
             // Create JPEG from the data inside the buffer
-            sprintf(file_name, "%3i.jpg", i);
+            sprintf(file_name, "%3i.jpg", i++);
             f = fopen(file_name, "w");
             if (f == NULL)
             {
