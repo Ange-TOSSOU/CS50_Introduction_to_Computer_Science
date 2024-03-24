@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
     }
 
     // Open the memory card
-    FILE *memory_card = fopen("card.raw", "r");
-    if (memory_card == NULL)
+    FILE *card = fopen(argv[1], "r");
+    if (card == NULL)
     {
         return 1;
     }
