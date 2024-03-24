@@ -76,10 +76,10 @@ int main(int argc, char *argv[])
 
     // Allocate memory for image
     //RGBTRIPLE(*image)[width] = calloc(height, width * sizeof(RGBTRIPLE));
-     RGBTRIPLE(*image)[width] = calloc(width, height * sizeof(RGBTRIPLE));
+    // RGBTRIPLE(*image)[width] = calloc(width, height * sizeof(RGBTRIPLE));
     // RGBTRIPLE(*image)[width] = calloc(width * height, sizeof(RGBTRIPLE));
     // RGBTRIPLE(*image)[height] = calloc(height, width * sizeof(RGBTRIPLE));
-    // RGBTRIPLE(*image)[height] = calloc(width, height * sizeof(RGBTRIPLE));
+     RGBTRIPLE(*image)[height] = calloc(width, height * sizeof(RGBTRIPLE));
     // RGBTRIPLE(*image)[height] = calloc(width * height, sizeof(RGBTRIPLE));
     if (image == NULL)
     {
