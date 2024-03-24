@@ -5,6 +5,10 @@
 #define JPEG_BLOCK_SIZE 512
 #define JPEG_OUTPUT_SIZE 8
 
+typedef uint8_t BYTE;
+
+void clean(BYTE *buffer, int size);
+
 int main(int argc, char *argv[])
 {
     // Accept a single command-line argument
@@ -22,9 +26,10 @@ int main(int argc, char *argv[])
     }
 
     // Create a buffer for a block of data
-    uint8_t buffer[JPEG_BLOCK_SIZE];
+    BYTE buffer[JPEG_BLOCK_SIZE];
+    clean(buffer, JPEG_BLOCK_SIZE);
     // For the purpose of generating the file's name
-    char *file_name[JPEG_OUTPUT_SIZE];
+    char file_name[JPEG_OUTPUT_SIZE];
     int i = 0;
 
     FILE *f = NULL;
@@ -42,7 +47,16 @@ int main(int argc, char *argv[])
         }
         fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
         fclose(f);
+        clean(buffer, JPEG_BLOCK_SIZE);
     }
 
-    fclose(memory_card);
+    fclose(card);
+}
+
+void clean(BYTE *buffer, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        buffer[i] = (BYTE) 0;
+    }
 }
