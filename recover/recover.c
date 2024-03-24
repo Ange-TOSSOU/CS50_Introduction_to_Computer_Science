@@ -1,5 +1,8 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#define JPEG_BLOCK_SIZE 512
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +19,9 @@ int main(int argc, char *argv[])
     {
         return 1;
     }
+
+    // Create a buffer for a block of data
+    uint8_t buffer[JPEG_BLOCK_SIZE];
 
     // While there's still data left to read from the memory card
 
