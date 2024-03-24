@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     FILE *card = fopen(argv[1], "r");
     if (card == NULL)
     {
+        printf("File not found.\n");
         return 1;
     }
 
@@ -48,6 +49,7 @@ int main(int argc, char *argv[])
         fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
         fclose(f);
         clean(buffer, JPEG_BLOCK_SIZE);
+        i++;
     }
 
     fclose(card);
