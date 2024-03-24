@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
             fwrite(buffer, JPEG_BLOCK_SIZE, 1, f);
             fclose(f);
             clean(buffer, JPEG_BLOCK_SIZE);
-            i++;
         }
     }
 
