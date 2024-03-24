@@ -8,6 +8,7 @@
 typedef uint8_t BYTE;
 
 void clean(BYTE *buffer, int size);
+int is_jpeg(BYTE *buffer);
 
 int main(int argc, char *argv[])
 {
@@ -37,19 +38,23 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, JPEG_BLOCK_SIZE, card) == JPEG_BLOCK_SIZE)
     {
-        // Create JPEGs from the data
-        sprintf(file_name, "%3i.jpg", i);
-        f = fopen(file_name, "w");
-        if (f == NULL)
+        // Verify if it is a JPEG file
+        if (is_jpeg(buffer))
         {
-            printf("Odds are there is no longer spaces in memory to recover images.");
-            fclose(card);
-            return 1;
+            // Create JPEG from the data inside the buffer
+            sprintf(file_name, "%3i.jpg", i);
+            f = fopen(file_name, "w");
+            if (f == NULL)
+            {
+                printf("Odds are there is no longer spaces in memory to recover images.\n");
+                fclose(card);
+                return 1;
+            }
+            fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
+            fclose(f);
+            clean(buffer, JPEG_BLOCK_SIZE);
+            i++;
         }
-        fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
-        fclose(f);
-        clean(buffer, JPEG_BLOCK_SIZE);
-        i++;
     }
 
     fclose(card);
@@ -61,4 +66,19 @@ void clean(BYTE *buffer, int size)
     {
         buffer[i] = (BYTE) 0;
     }
+}
+
+int is_jpeg(BYTE *buffer)
+{
+    if (buffer[0] != 0xff || buffer[1] != 0xd8 || buffer[2] != 0xff)
+    {
+        return 0;
+    }
+
+    if (!(0xe0 <= buffer[3] && buffer[3] <= 0xef))
+    {
+        return 0;
+    }
+
+    return 1;
 }
