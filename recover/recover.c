@@ -7,7 +7,6 @@
 
 typedef uint8_t BYTE;
 
-void clean(BYTE *buffer, int size);
 int is_jpeg(BYTE *buffer);
 
 int main(int argc, char *argv[])
@@ -29,7 +28,6 @@ int main(int argc, char *argv[])
 
     // Create a buffer for a block of data
     BYTE buffer[JPEG_BLOCK_SIZE];
-    clean(buffer, JPEG_BLOCK_SIZE);
     // For the purpose of generating the file's name
     char file_name[JPEG_OUTPUT_SIZE];
     int i = 0;
@@ -41,6 +39,11 @@ int main(int argc, char *argv[])
         // Verify if it is a JPEG file
         if (is_jpeg(buffer))
         {
+            // Close an existing opened file
+            if (f != NULL)
+            {
+                fclose(f);
+            }
             // Create JPEG from the data inside the buffer
             sprintf(file_name, "%3i.jpg", i++);
             f = fopen(file_name, "w");
@@ -48,23 +51,19 @@ int main(int argc, char *argv[])
             {
                 printf("Odds are there is no longer spaces in memory to recover images.\n");
                 fclose(card);
-                return 1;
+                return 2;
             }
-            fwrite(buffer, JPEG_BLOCK_SIZE, 1, f);
-            fclose(f);
-            clean(buffer, JPEG_BLOCK_SIZE);
+        }
+        else
+        {
+            if (f != NULL)
+            {
+                fwrite(buffer, JPEG_BLOCK_SIZE, 1, f);
+            }
         }
     }
 
     fclose(card);
-}
-
-void clean(BYTE *buffer, int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        buffer[i] = (BYTE) 0;
-    }
 }
 
 int is_jpeg(BYTE *buffer)
