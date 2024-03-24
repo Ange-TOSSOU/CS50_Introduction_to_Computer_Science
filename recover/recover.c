@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #define JPEG_BLOCK_SIZE 512
+#define JPEG_OUTPUT_SIZE 8
 
 int main(int argc, char *argv[])
 {
@@ -22,12 +23,24 @@ int main(int argc, char *argv[])
 
     // Create a buffer for a block of data
     uint8_t buffer[JPEG_BLOCK_SIZE];
+    // For the purpose of generating the file's name
+    char *file_name[JPEG_OUTPUT_SIZE];
+    int i = 0;
 
+    FILE *f = NULL;
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, JPEG_BLOCK_SIZE, card) == JPEG_BLOCK_SIZE)
     {
         // Create JPEGs from the data
-
+        sprintf(file_name, "%3i.jpg", i);
+        f = fopen(file_name, "w");
+        if (f == NULL)
+        {
+            fclose(card);
+            return 1;
+        }
+        fwrite(buffer, 1, JPEG_BLOCK_SIZE, f);
+        fclose(f);
     }
 
     fclose(memory_card);
