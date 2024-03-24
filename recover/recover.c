@@ -36,15 +36,15 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, card) == sizeof(BYTE) * JPEG_BLOCK_SIZE)
     {
-        // Verify if it is a JPEG file
+        // Verify if it is a beginning of a JPEG file
         if (is_jpeg(buffer))
         {
-            // Close an existing opened file
+            // Close an existing opened JPEG file
             if (f != NULL)
             {
                 fclose(f);
             }
-            // Create JPEG from the data inside the buffer
+            // Create a new JPEG file
             sprintf(file_name, "%03i.jpg", i++);
             f = fopen(file_name, "w");
             if (f == NULL)
@@ -53,10 +53,12 @@ int main(int argc, char *argv[])
                 fclose(card);
                 return 2;
             }
+            // Set the header of the JPEG file
             fwrite(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, f);
         }
         else
         {
+            // Keep writing in the JPEG file
             if (f != NULL)
             {
                 fwrite(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, f);
