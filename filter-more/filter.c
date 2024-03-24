@@ -61,8 +61,8 @@ int main(int argc, char *argv[])
     fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
 
     // Ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
-        bi.biBitCount != 24 || bi.biCompression != 0)
+    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 || bi.biBitCount != 24 ||
+        bi.biCompression != 0)
     {
         fclose(outptr);
         fclose(inptr);
@@ -76,11 +76,6 @@ int main(int argc, char *argv[])
 
     // Allocate memory for image
     RGBTRIPLE(*image)[width] = calloc(height, width * sizeof(RGBTRIPLE));
-    // RGBTRIPLE(*image)[width] = calloc(width, height * sizeof(RGBTRIPLE));
-    // RGBTRIPLE(*image)[width] = calloc(width * height, sizeof(RGBTRIPLE));
-    // RGBTRIPLE(*image)[height] = calloc(height, width * sizeof(RGBTRIPLE));
-    // RGBTRIPLE(*image)[height] = calloc(width, height * sizeof(RGBTRIPLE));
-    // RGBTRIPLE(*image)[height] = calloc(width * height, sizeof(RGBTRIPLE));
     if (image == NULL)
     {
         printf("Not enough memory to store image.\n");

@@ -98,7 +98,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int x, y;
     int result;
 
-    RGBTRIPLE(*image_edge)[width] = calloc(height, width * sizeof(RGBTRIPLE));
+    RGBTRIPLE(*image_edge)[width] = calloc(width, height * sizeof(RGBTRIPLE));
 
     for (int i = 0; i < height; i++)
     {
