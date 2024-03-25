@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void clean_memory(char *plates, int size);
+void clean_memory(char *plates[], int size);
 
 int main(int argc, char *argv[])
 {
@@ -51,7 +52,7 @@ int main(int argc, char *argv[])
     clean_memory(plates, 8);
 }
 
-void clean_memory(char *plates, int size)
+void clean_memory(char *plates[], int size)
 {
     for (int i = 0; i < size; i++)
     {
