@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
     }
 
     clean_memory(plates, 8);
+    fclose(infile);
 }
 
 void clean_memory(char *plates[], int size)
