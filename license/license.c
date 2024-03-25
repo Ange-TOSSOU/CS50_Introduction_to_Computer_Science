@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void clean_memory(char *plates, int size);
+
 int main(int argc, char *argv[])
 {
     // Check for command line args
@@ -17,6 +19,22 @@ int main(int argc, char *argv[])
     char *plates[8];
 
     FILE *infile = fopen(argv[1], "r");
+    if (infile == NULL)
+    {
+        printf("Unable to open the file.\n");
+        return 1;
+    }
+
+    // Allocate memory to store each plate number
+    for (int i = 0; i < 8; i++)
+    {
+        plates[i] = malloc(7 * sizeof(char));
+        if (plates[i] == NULL)
+        {
+            printf("Memory allocation failed.\n");
+            clean_memory(plates, i);
+        }
+    }
 
     int idx = 0;
 
@@ -26,13 +44,17 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        sprintf(plates[idx], "%s", buffer);
-        // plates[idx] = buffer;
+        strcpy(plates[idx], buffer);
         idx++;
     }
 
-    for (int i = 0; i < 8; i++)
+    clean_memory(plates, 8);
+}
+
+void clean_memory(char *plates, int size)
+{
+    for (int i = 0; i < size; i++)
     {
-        printf("%s\n", plates[i]);
+        free(plates[i]);
     }
 }
