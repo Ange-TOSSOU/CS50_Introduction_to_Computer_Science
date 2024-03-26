@@ -22,6 +22,11 @@ int main(void)
 
     for (int i = 0; i < 3; i++)
     {
+        tmp[i] = list[i];
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
         printf("%i\n", list[i]);
     }
 }
