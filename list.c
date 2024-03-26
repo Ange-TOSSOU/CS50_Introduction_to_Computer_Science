@@ -24,9 +24,17 @@ int main(void)
     {
         tmp[i] = list[i];
     }
+    tmp[3] = 4;
 
-    for (int i = 0; i < 3; i++)
+    free(list);
+    list = tmp;
+
+    for (int i = 0; i < 4; i++)
     {
         printf("%i\n", list[i]);
     }
+
+    free(list);
+
+    return 0;
 }
