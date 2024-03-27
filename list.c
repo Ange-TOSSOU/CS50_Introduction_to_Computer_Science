@@ -22,8 +22,21 @@ int main(int argc, char *argv[])
             return 1;
         }
         n->number = number;
-        n->next = list;
-        list = n;
+        n->next = NULL;
+        // n->next = list;
+        // list = n;
+
+        if (list == NULL)
+        {
+            list = n;
+        }
+        else
+        {
+            for (node *ptr = list; ptr != NUU; ptr = ptr->next)
+            {
+                
+            }
+        }
     }
 
     // Print whole list
