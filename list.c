@@ -34,7 +34,11 @@ int main(int argc, char *argv[])
         {
             for (node *ptr = list; ptr != NUU; ptr = ptr->next)
             {
-                
+                if (ptr->next == NULL)
+                {
+                    ptr->next = n;
+                    break;
+                }
             }
         }
     }
