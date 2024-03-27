@@ -5,8 +5,9 @@ CS50x is an entry-level course delivered by the Harvard University which covered
 - Memory management
 - Programming languages including C and Python
 - etc.
+
 Find more about this course [here][cs50x_material].
-<br>
+
 The course contains a bunch of problem sets. Some of them can be really challenging.
 I created this repository to save all my solutions for those problems. Feel free to try its out, compare its to yours and give me your feedback if needed.
 
