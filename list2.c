@@ -30,12 +30,24 @@ int main(int argc, char *argv[])
         {
             list = n;
         }
+        else if (n->number < list->number)
+        {
+            n->next = list;
+            list = n;
+        }
         else
         {
-            for (node *ptr = list; ptr != NUU; ptr = ptr->next)
+            for (node *ptr = list; ptr != NULL; ptr = ptr->next)
             {
                 if (ptr->next == NULL)
                 {
+                    ptr->next = n;
+                    break;
+                }
+                
+                if (n->number < ptr->next->number)
+                {
+                    n->next = ptr->next;
                     ptr->next = n;
                     break;
                 }
