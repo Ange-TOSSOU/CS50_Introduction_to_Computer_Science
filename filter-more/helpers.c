@@ -87,7 +87,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     free(image_blur);
 }
 
-// Detect edges
+// Detection edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     const int n = 3;
