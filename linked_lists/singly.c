@@ -37,4 +37,8 @@ Node* insert(Node* head, int value)
     {
         return head;
     }
+
+    n->next = head;
+
+    return n;
 }
