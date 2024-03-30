@@ -15,5 +15,16 @@ Node* create(int value)
 
 int find(Node* head, int value)
 {
-    while ()
+    Node* current = head;
+
+    while (current != NULL)
+    {
+        if (current->value == value)
+        {
+            return 1;
+        }
+        current = current->next;
+    }
+
+    return 0;
 }
