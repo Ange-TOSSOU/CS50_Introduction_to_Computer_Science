@@ -47,13 +47,39 @@ Node *insert(Node *head, int value)
     return n;
 }
 
-void destroy(Node *head)
+Node *delete(Node *head, int value)
+{
+    Node *current = head;
+
+    while (current != NULL)
+    {
+        if (current->value == value)
+        {
+            break;
+        }
+        current = current->next;
+    }
+
+    if (current == NULL)
+    {
+        return head;
+    }
+
+    // if (current->prev == NULL)
+    // TO COMPLETE
+    current->prev->next = current->next;
+    current->next->prev = current->prev;
+}
+
+Node *destroy(Node *head)
 {
     if (head == NULL)
     {
-        return;
+        return NULL;
     }
 
     destroy(head->next);
     free(head);
+
+    return NULL;
 }
