@@ -12,3 +12,8 @@ Node* create(int value)
 
     return n;
 }
+
+int find(Node* head, int value)
+{
+    while ()
+}
