@@ -42,3 +42,8 @@ Node* insert(Node* head, int value)
 
     return n;
 }
+
+Node* destroy(Node* head)
+{
+    
+}
