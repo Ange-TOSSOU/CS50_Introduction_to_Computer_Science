@@ -2,7 +2,7 @@
 
 Node *create(int value)
 {
-    Node* n = malloc(sizeof(Node));
+    Node *n = malloc(sizeof(Node));
 
     if (n != NULL)
     {
@@ -29,9 +29,9 @@ int find(Node *head, int value)
     return 0;
 }
 
-Node* insert(Node* head, int value)
+Node *insert(Node *head, int value)
 {
-    Node* n = create(value);
+    Node *n = create(value);
 
     if (n == NULL)
     {
@@ -39,11 +39,15 @@ Node* insert(Node* head, int value)
     }
 
     n->next = head;
+    if (head != NULL)
+    {
+        head->prev = n;
+    }
 
     return n;
 }
 
-void destroy(Node* head)
+void destroy(Node *head)
 {
     if (head == NULL)
     {
