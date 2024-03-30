@@ -1,21 +1,21 @@
 #include "doubly.h"
 
-Node* create(int value)
+Node *create(int value)
 {
     Node* n = malloc(sizeof(Node));
 
     if (n != NULL)
     {
         n->value = value;
-        n->next = NULL;
+        n->prev = n->next = NULL;
     }
 
     return n;
 }
 
-int find(Node* head, int value)
+int find(Node *head, int value)
 {
-    Node* current = head;
+    Node *current = head;
 
     while (current != NULL)
     {
