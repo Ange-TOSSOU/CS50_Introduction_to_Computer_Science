@@ -28,3 +28,6 @@ int find(Node* head, int value)
 
     return 0;
 }
+
+Node* insert(Node* head, int value)
+{}
