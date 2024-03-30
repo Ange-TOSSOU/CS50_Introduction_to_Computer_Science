@@ -11,4 +11,4 @@ Node;
 Node* create(int value);
 int find(Node* head, int value);
 Node* insert(Node* head, int value);
-Node* destroy(Node* head);
+void destroy(Node* head);

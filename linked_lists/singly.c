@@ -43,7 +43,13 @@ Node* insert(Node* head, int value)
     return n;
 }
 
-Node* destroy(Node* head)
+void destroy(Node* head)
 {
-    
+    if (head == NULL)
+    {
+        return;
+    }
+
+    destroy(head->next);
+    free(head);
 }
