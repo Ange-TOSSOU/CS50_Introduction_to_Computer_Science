@@ -30,4 +30,11 @@ int find(Node* head, int value)
 }
 
 Node* insert(Node* head, int value)
-{}
+{
+    Node* n = create(value);
+
+    if (n == NULL)
+    {
+        return head;
+    }
+}
