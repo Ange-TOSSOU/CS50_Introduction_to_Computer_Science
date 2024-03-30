@@ -10,4 +10,4 @@ typedef struct node
 Node *create(int value);
 int find(Node *head, int value);
 Node *insert(Node *head, int value);
-void destroy(Node *head);
+Node *destroy(Node *head);

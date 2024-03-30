@@ -43,13 +43,15 @@ Node *insert(Node *head, int value)
     return n;
 }
 
-void destroy(Node *head)
+Node *destroy(Node *head)
 {
     if (head == NULL)
     {
-        return;
+        return NULL;
     }
 
     destroy(head->next);
     free(head);
+
+    return NULL;
 }
