@@ -43,7 +43,7 @@ Stack *insert(Stack *head, int value)
     return n;
 }
 
-/*int pop(Stack *head)
+int pop(Stack *head)
 {
     Stack *current = head;
 
@@ -82,7 +82,7 @@ Stack *insert(Stack *head, int value)
     free(current);
 
     return head;
-}*/
+}
 
 Stack *destroy(Stack *head)
 {
