@@ -27,7 +27,7 @@ Stack *create(int capacity)
 
 int push(Stack *s, int value)
 {
-    if (s == NULL || s->top + 1 > CAPACITY)
+    if (s == NULL || s->top + 1 > s->capacity)
     {
         return 0;
     }
@@ -45,4 +45,15 @@ int pop(Stack *s)
     }
 
     return s->array[s->top--];
+}
+
+Stack *destroy(Stack *s)
+{
+    if (s != NULL)
+    {
+        free(s->array);
+        free(s);
+    }
+
+    return NULL;
 }

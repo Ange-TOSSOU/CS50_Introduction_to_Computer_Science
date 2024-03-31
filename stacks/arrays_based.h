@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct
 {
@@ -10,3 +11,4 @@ typedef struct
 Stack *create(int capacity);
 int push(Stack *s, int value);
 int pop(Stack *s);
+Stack *destroy(Stack *s);
