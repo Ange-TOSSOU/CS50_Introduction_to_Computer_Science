@@ -51,10 +51,11 @@ int pop(Stack *head)
     }
 
     Stack *current = head;
+    int value = current->value;
     head = head->next;
     free(current);
 
-    return head;
+    return value;
 }
 
 Stack *destroy(Stack *head)
