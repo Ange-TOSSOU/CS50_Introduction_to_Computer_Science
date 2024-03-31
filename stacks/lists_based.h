@@ -8,7 +8,7 @@ typedef struct stack
 } Stack;
 
 Stack *create(int value);
-int find(Stack *s, int value);
-Stack *push(Stack *s, int value);
-Stack *push(Stack *s, int value);
-Stack *destroy(Stack *s);
+int find(Stack *head, int value);
+Stack *push(Stack *head, int value);
+Stack *push(Stack *head, int value);
+Stack *destroy(Stack *head);
