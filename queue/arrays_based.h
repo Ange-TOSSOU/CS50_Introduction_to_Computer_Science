@@ -4,6 +4,7 @@
 typedef struct
 {
     int *array;
+    int capacity;
     int front;
     int size;
 } Queue;

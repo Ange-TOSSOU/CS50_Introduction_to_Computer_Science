@@ -7,27 +7,27 @@ Queue *create(int capacity)
         return NULL;
     }
 
-    Queue *s = malloc(sizeof(Queue));
-    if (s == NULL)
+    Queue *q = malloc(sizeof(Queue));
+    if (q == NULL)
     {
         return NULL;
     }
 
-    s->array = malloc(capacity * sizeof(int));
-    if (s->array == NULL)
+    q->array = malloc(capacity * sizeof(int));
+    if (q->array == NULL)
     {
-        free(s);
+        free(q);
         return NULL;
     }
-    s->capacity = capacity;
-    s->top = 0;
+    q->capacity = capacity;
+    q->front = q->size = 0;
 
-    return s;
+    return q;
 }
 
-int enqueue(Queue *s, int value)
+int enqueue(Queue *q, int value)
 {
-    if (s == NULL || s->top + 1 > s->capacity)
+    if (q == NULL || q->size == q->capacity)
     {
         return 0;
     }
