@@ -32,7 +32,7 @@ int enqueue(Queue *q, int value)
         return 0;
     }
 
-    q->array[q->front + q->size] = value;
+    q->array[(q->front + q->size) % q->capacity] = value;
     q->size++;
 
     return 1;
