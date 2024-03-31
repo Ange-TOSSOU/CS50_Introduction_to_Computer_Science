@@ -27,7 +27,7 @@ Stack *create(int capacity)
 
 int push(Stack *s, int value)
 {
-    if (s == NULL || s->top + 1 > s->capacity)
+    if (s == NULL || s->top == s->capacity)
     {
         return 0;
     }

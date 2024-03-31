@@ -32,7 +32,7 @@ int enqueue(Queue *q, int value)
         return 0;
     }
 
-    s->array[s->top++] = value;
+    q->array[q->top++] = value;
 
     return 1;
 }
