@@ -48,12 +48,12 @@ int dequeue(Queue *q)
     return s->array[q->front++];
 }
 
-Queue *destroy(Queue *s)
+Queue *destroy(Queue *q)
 {
     if (s != NULL)
     {
-        free(s->array);
-        free(s);
+        free(q->array);
+        free(q);
     }
 
     return NULL;
