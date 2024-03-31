@@ -45,8 +45,9 @@ int dequeue(Queue *q)
     }
 
     int value = q->array[q->front];
+    q->front = (q->front + 1) % q->capacity;
     q->size--;
-    q->front = (q->front + 1) % q->capacity
+
     return value;
 }
 
