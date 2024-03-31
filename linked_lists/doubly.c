@@ -65,10 +65,27 @@ Node *delete(Node *head, int value)
         return head;
     }
 
-    // if (current->prev == NULL)
-    // TO COMPLETE
+    if (current->prev == NULL)
+    {
+        if (current->next != NULL)
+        {
+            current->next->prev = NULL;
+        }
+        head = current->next;
+        free(current);
+    }
+    else if (current->next == NULL)
+    {
+        if (current->prev != NULL)
+        {
+            current->next->prev = NULL;
+        }
+        head = current->next;
+        free(current);
+    }
     current->prev->next = current->next;
     current->next->prev = current->prev;
+    free(current);
 }
 
 Node *destroy(Node *head)
