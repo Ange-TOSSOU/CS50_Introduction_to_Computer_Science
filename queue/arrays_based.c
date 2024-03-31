@@ -32,18 +32,19 @@ int enqueue(Queue *q, int value)
         return 0;
     }
 
-    q->array[q->top++] = value;
+    q->array[q->size++] = value;
 
     return 1;
 }
 
-int dequeue(Queue *s)
+int dequeue(Queue *q)
 {
-    if (s == NULL || s->top == 0)
+    if (q == NULL || q->size == 0)
     {
         return 0;
     }
 
+    q->front++;
     return s->array[s->top--];
 }
 
