@@ -4,10 +4,10 @@
 typedef struct stack
 {
     int value;
-    struct node *next;
+    struct stack *next;
 } Stack;
 
-Node *create(int value);
-int find(Node *head, int value);
-Node *insert(Node *head, int value);
-Node *destroy(Node *head);
+Stack *create(int value);
+int find(Stack *head, int value);
+Stack *insert(Stack *head, int value);
+Stack *destroy(Stack *head);
