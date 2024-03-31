@@ -6,9 +6,9 @@ typedef struct
     int *array;
     int capacity;
     int top;
-} Stack;
+} Queue;
 
-Stack *create(int capacity);
-int push(Stack *s, int value);
-int pop(Stack *s);
-Stack *destroy(Stack *s);
+Queue *create(int capacity);
+int push(Queue *s, int value);
+int pop(Queue *s);
+Queue *destroy(Queue *s);
