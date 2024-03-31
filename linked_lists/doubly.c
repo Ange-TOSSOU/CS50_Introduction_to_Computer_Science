@@ -76,7 +76,6 @@ Node *delete(Node *head, int value)
     else if (current->next == NULL)
     {
         // We already know that current->prev != NULL
-        // sin
         current->prev->next = NULL;
     }
     else
