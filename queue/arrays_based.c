@@ -45,7 +45,7 @@ int dequeue(Queue *q)
     }
 
     q->front++;
-    return s->array[s->top--];
+    return s->array[q->front++];
 }
 
 Queue *destroy(Queue *s)
