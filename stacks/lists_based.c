@@ -43,6 +43,47 @@ Stack *insert(Stack *head, int value)
     return n;
 }
 
+/*int pop(Stack *head)
+{
+    Stack *current = head;
+
+    while (current != NULL)
+    {
+        if (current->value == value)
+        {
+            break;
+        }
+        current = current->next;
+    }
+
+    if (current == NULL)
+    {
+        return head;
+    }
+
+    if (current->prev == NULL)
+    {
+        if (current->next != NULL)
+        {
+            current->next->prev = NULL;
+        }
+        head = current->next;
+    }
+    else if (current->next == NULL)
+    {
+        // We already know that current->prev != NULL
+        current->prev->next = NULL;
+    }
+    else
+    {
+        current->prev->next = current->next;
+        current->next->prev = current->prev;
+    }
+    free(current);
+
+    return head;
+}*/
+
 Stack *destroy(Stack *head)
 {
     if (head == NULL)
