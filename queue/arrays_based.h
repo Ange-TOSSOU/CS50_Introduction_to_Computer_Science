@@ -4,11 +4,11 @@
 typedef struct
 {
     int *array;
-    int capacity;
-    int top;
+    int front;
+    int size;
 } Queue;
 
 Queue *create(int capacity);
-int push(Queue *s, int value);
-int pop(Queue *s);
+int enqueue(Queue *s, int value);
+int dequeue(Queue *s);
 Queue *destroy(Queue *s);

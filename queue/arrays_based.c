@@ -1,13 +1,13 @@
 #include "arrays_based.h"
 
-Stack *create(int capacity)
+Queue *create(int capacity)
 {
     if (capacity <= 0)
     {
         return NULL;
     }
 
-    Stack *s = malloc(sizeof(Stack));
+    Queue *s = malloc(sizeof(Queue));
     if (s == NULL)
     {
         return NULL;
@@ -25,7 +25,7 @@ Stack *create(int capacity)
     return s;
 }
 
-int push(Stack *s, int value)
+int enqueue(Queue *s, int value)
 {
     if (s == NULL || s->top + 1 > s->capacity)
     {
@@ -37,7 +37,7 @@ int push(Stack *s, int value)
     return 1;
 }
 
-int pop(Stack *s)
+int dequeue(Queue *s)
 {
     if (s == NULL || s->top == 0)
     {
@@ -47,7 +47,7 @@ int pop(Stack *s)
     return s->array[s->top--];
 }
 
-Stack *destroy(Stack *s)
+Queue *destroy(Queue *s)
 {
     if (s != NULL)
     {
