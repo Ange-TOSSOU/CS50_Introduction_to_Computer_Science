@@ -75,14 +75,7 @@ Node *delete(Node *head, int value)
     }
     else if (current->next == NULL)
     {
-        if (current->prev != NULL)
-        {
-            current->prev->next = NULL;
-        }
-        else
-        {
-            head = NULL;
-        }
+        current->prev->next = NULL;
     }
     else
     {
