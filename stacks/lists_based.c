@@ -1,8 +1,8 @@
 #include "singly.h"
 
-Node *create(int value)
+Stack *create(int value)
 {
-    Node *n = malloc(sizeof(Node));
+    Stack *n = malloc(sizeof(Stack));
 
     if (n != NULL)
     {
@@ -13,9 +13,9 @@ Node *create(int value)
     return n;
 }
 
-int find(Node *head, int value)
+int find(Stack *head, int value)
 {
-    Node *current = head;
+    Stack *current = head;
 
     while (current != NULL)
     {
@@ -29,9 +29,9 @@ int find(Node *head, int value)
     return 0;
 }
 
-Node *insert(Node *head, int value)
+Stack *insert(Stack *head, int value)
 {
-    Node *n = create(value);
+    Stack *n = create(value);
 
     if (n == NULL)
     {
@@ -43,7 +43,7 @@ Node *insert(Node *head, int value)
     return n;
 }
 
-Node *destroy(Node *head)
+Stack *destroy(Stack *head)
 {
     if (head == NULL)
     {
