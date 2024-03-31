@@ -13,9 +13,9 @@ Stack *create(int value)
     return n;
 }
 
-int find(Stack *head, int value)
+int find(Stack *s, int value)
 {
-    Stack *current = head;
+    Stack *current = s;
 
     while (current != NULL)
     {
@@ -29,23 +29,23 @@ int find(Stack *head, int value)
     return 0;
 }
 
-Stack *insert(Stack *head, int value)
+Stack *push(Stack *s, int value)
 {
     Stack *n = create(value);
 
     if (n == NULL)
     {
-        return head;
+        return s;
     }
 
-    n->next = head;
+    n->next = s;
 
     return n;
 }
 
-int pop(Stack *head)
+int pop(Stack *s)
 {
-    Stack *current = head;
+    Stack *current = s;
 
     while (current != NULL)
     {
@@ -58,7 +58,7 @@ int pop(Stack *head)
 
     if (current == NULL)
     {
-        return head;
+        return s;
     }
 
     if (current->prev == NULL)
@@ -67,7 +67,7 @@ int pop(Stack *head)
         {
             current->next->prev = NULL;
         }
-        head = current->next;
+        s = current->next;
     }
     else if (current->next == NULL)
     {
@@ -81,18 +81,18 @@ int pop(Stack *head)
     }
     free(current);
 
-    return head;
+    return s;
 }
 
-Stack *destroy(Stack *head)
+Stack *destroy(Stack *s)
 {
-    if (head == NULL)
+    if (s == NULL)
     {
         return NULL;
     }
 
-    destroy(head->next);
-    free(head);
+    destroy(s->next);
+    free(s);
 
     return NULL;
 }
