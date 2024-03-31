@@ -72,20 +72,26 @@ Node *delete(Node *head, int value)
             current->next->prev = NULL;
         }
         head = current->next;
-        free(current);
     }
     else if (current->next == NULL)
     {
         if (current->prev != NULL)
         {
-            current->next->prev = NULL;
+            current->prev->next = NULL;
         }
-        head = current->next;
-        free(current);
+        else
+        {
+            head = NULL;
+        }
     }
-    current->prev->next = current->next;
-    current->next->prev = current->prev;
+    else
+    {
+        current->prev->next = current->next;
+        current->next->prev = current->prev;
+    }
     free(current);
+
+    return head;
 }
 
 Node *destroy(Node *head)
