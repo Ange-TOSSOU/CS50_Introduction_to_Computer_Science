@@ -61,21 +61,21 @@ person *create_family(int generations)
         int r = rand() % 2;
         if (r == 0)
         {
-            p->allele[0] = parent0->allele[0];
+            p->alleles[0] = parent0->alleles[0];
         }
         else
         {
-            p->allele[0] = parent0->allele[1];
+            p->alleles[0] = parent0->alleles[1];
         }
         // Randomly choose second allele
         r = rand() % 2;
         if (r == 0)
         {
-            p->allele[1] = parent1->allele[0];
+            p->alleles[1] = parent1->alleles[0];
         }
         else
         {
-            p->allele[1] = parent1->allele[1];
+            p->alleles[1] = parent1->alleles[1];
         }
     }
 
@@ -129,11 +129,13 @@ void print_family(person *p, int generation)
     // Print person
     if (generation == 0)
     {
-        printf("Child (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
+        printf("Child (Generation %i): blood type %c%c\n", generation, p->alleles[0],
+               p->alleles[1]);
     }
     else if (generation == 1)
     {
-        printf("Parent (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
+        printf("Parent (Generation %i): blood type %c%c\n", generation, p->alleles[0],
+               p->alleles[1]);
     }
     else
     {
@@ -141,7 +143,8 @@ void print_family(person *p, int generation)
         {
             printf("Great-");
         }
-        printf("Grandparent (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
+        printf("Grandparent (Generation %i): blood type %c%c\n", generation, p->alleles[0],
+               p->alleles[1]);
     }
 
     // Print parents of current generation
