@@ -32,7 +32,7 @@ bool check(const char *word)
     node *cur = table[index];
     while (cur != NULL)
     {
-        if (strcmp(toupper(word), cur->word) == 0)
+        if (strcmp(tolower(word), cur->word) == 0)
         {
             return true;
         }
@@ -52,7 +52,7 @@ unsigned int hash(const char *word)
     int sum_ascii = 0;
     for (int i = 0; word[i] != '\0'; i++)
     {
-        sum_ascii += word[i];
+        sum_ascii += tolower(word[i]);
     }
 
     return sum_ascii;
