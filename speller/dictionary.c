@@ -25,7 +25,24 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    return false;
+    // Hash the word to obtain its hash value
+    int index = hash(word);
+
+    // Search
+    node *cur = table[index];
+    while (cur != NULL)
+    {
+        if (strcmp(toupper(word), cur->word) == 0)
+        {
+            return true;
+        }
+
+        // Continue to search the word
+        cur = cur->next;
+    }
+
+    // Word not found
+    return true;
 }
 
 // Hashes word to a number
