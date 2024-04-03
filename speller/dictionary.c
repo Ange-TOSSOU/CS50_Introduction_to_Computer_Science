@@ -38,13 +38,18 @@ bool load(const char *dictionary)
     // TODO
     // Open the dictionary file
     FILE *source = fopen(dictionary, "r");
+    if (source == NULL)
+    {
+        return false;
+    }
 
     // Read each word in the file
 
         // Add each word to the hash table
 
     // Close the dictionary file
-    return false;
+    fclose(source);
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
