@@ -120,14 +120,16 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    node *tmp = NULL;
     for (int i = 0; i < N; i++)
     {
-        if (table[i] == NULL)
+        while (table[i] != NULL)
         {
-            continue;
+            tmp = table[i];
+            table[i] = table[i]->next;
+            free(tmp);
         }
-
-        while ()
     }
-    return false;
+
+    return true;
 }
