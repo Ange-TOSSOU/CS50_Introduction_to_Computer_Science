@@ -73,7 +73,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char *word[LENGTH + 2];
+    char word[LENGTH + 2];
     node *n = NULL;
     int index;
     // Read each word in the file
