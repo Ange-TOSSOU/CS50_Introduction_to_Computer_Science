@@ -36,6 +36,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    // Open the dictionary file
+    FILE *source = fopen(dictionary, "r");
+
+    // Read each word in the file
+
+        // Add each word to the hash table
+
+    // Close the dictionary file
     return false;
 }
 
