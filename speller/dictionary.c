@@ -43,10 +43,28 @@ bool load(const char *dictionary)
         return false;
     }
 
+    char *word[LENGTH + 2];
     // Read each word in the file
-    while (fread())
+    while (fgets(word, LENGTH + 2, source))
+    {
+        // Consume the '\n' character
+        word[strlen(word) - 1] = '\0';
 
+        // Create space for a new hash table node
+        node *n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            fclose(source);
+            unload();
+            return false;
+        }
+
+        // Copy the word into the new node
+        strcpy(n->word, word);
+        n->next = NULL;
+        
         // Add each word to the hash table
+    }
 
     // Close the dictionary file
     fclose(source);
