@@ -44,6 +44,8 @@ bool load(const char *dictionary)
     }
 
     char *word[LENGTH + 2];
+    node *n = NULL;
+    int index;
     // Read each word in the file
     while (fgets(word, LENGTH + 2, source))
     {
@@ -51,7 +53,7 @@ bool load(const char *dictionary)
         word[strlen(word) - 1] = '\0';
 
         // Create space for a new hash table node
-        node *n = malloc(sizeof(node));
+        n = malloc(sizeof(node));
         if (n == NULL)
         {
             fclose(source);
@@ -66,8 +68,9 @@ bool load(const char *dictionary)
         // Add each word to the hash table
 
         //Hash the word to obtain its hash value
-        int index = hash(word);
-        
+        index = hash(word);
+
+        // Insert the new node into the hash table
     }
 
     // Close the dictionary file
