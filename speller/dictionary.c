@@ -66,6 +66,8 @@ bool load(const char *dictionary)
         // Add each word to the hash table
 
         //Hash the word to obtain its hash value
+        int index = hash(word);
+        
     }
 
     // Close the dictionary file
