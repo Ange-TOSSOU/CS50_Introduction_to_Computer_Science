@@ -29,7 +29,13 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    int sum_ascii = 0;
+    for (int i = 0; word[i] != '\0'; i++)
+    {
+        sum_ascii += word[i];
+    }
+
+    return sum_ascii;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
