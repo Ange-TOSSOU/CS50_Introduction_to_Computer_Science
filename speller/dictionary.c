@@ -12,6 +12,9 @@ typedef struct node
     struct node *next;
 } node;
 
+// The size of the dictionary loaded
+int size_dic = 0;
+
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
@@ -42,6 +45,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    size_dic = 0;
     // Open the dictionary file
     FILE *source = fopen(dictionary, "r");
     if (source == NULL)
@@ -64,6 +68,7 @@ bool load(const char *dictionary)
         {
             fclose(source);
             unload();
+            size_dic = 0;
             return false;
         }
 
@@ -78,6 +83,8 @@ bool load(const char *dictionary)
         // Insert the new node into the hash table
         n->next = table[index];
         table[index] = n;
+
+        size_dic++;
     }
 
     // Close the dictionary file
@@ -89,7 +96,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return size_dic;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
