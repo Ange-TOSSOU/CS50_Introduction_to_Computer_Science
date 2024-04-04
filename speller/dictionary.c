@@ -1,9 +1,9 @@
 // Implements a dictionary's functionality
 
 #include <ctype.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <string.h>
 #include <strings.h>
 
@@ -20,7 +20,7 @@ typedef struct node
 int size_dic = 0;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 2600;
 
 // Hash table
 node *table[N];
@@ -46,7 +46,7 @@ bool check(const char *word)
     }
 
     // Word not found
-    return true;
+    return false;
 }
 
 // Hashes word to a number
@@ -59,7 +59,7 @@ unsigned int hash(const char *word)
         sum_ascii += tolower(word[i]);
     }
 
-    return sum_ascii;
+    return sum_ascii % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -98,7 +98,7 @@ bool load(const char *dictionary)
 
         // Add each word to the hash table
 
-        //Hash the word to obtain its hash value
+        // Hash the word to obtain its hash value
         index = hash(word);
 
         // Insert the new node into the hash table
