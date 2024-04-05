@@ -10,7 +10,7 @@
     "accessibility.hideAccessibleView": false,
     "search.defaultViewMode": "list",
     "notebook.diff.overviewRuler": false,
-    "workbench.activityBar.location": "side",
+    "workbench.activityBar.location": "default",
     "workbench.sideBar.location": "left",
     "workbench.activityBar.iconClickBehavior": "toggle",
     "liveshare.accessibility.soundsEnabled": true,
