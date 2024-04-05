@@ -41,7 +41,7 @@ bool check(const char *word)
             return true;
         }
 
-        if (cur->word[0] < tolower[0])
+        if (cur->word[0] < tolower(word[0]))
         {
             break;
         }
