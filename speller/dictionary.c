@@ -36,7 +36,7 @@ bool check(const char *word)
     node *cur = table[index];
     while (cur != NULL)
     {
-        if (strcasecmp(word, cur->word) > 0)
+        if (strcasecmp(cur->word, word) > 0)
         {
             // Continue to search the word
             cur = cur->next;
@@ -47,7 +47,7 @@ bool check(const char *word)
         }
     }
 
-    if (cur != NULL && strcasecmp(word, cur->word) == 0)
+    if (cur != NULL && strcasecmp(cur->word, word) == 0)
     {
         // Word found
         return true;
