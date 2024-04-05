@@ -41,6 +41,11 @@ bool check(const char *word)
             return true;
         }
 
+        if (cur->word[0] < tolower[0])
+        {
+            break;
+        }
+
         // Continue to search the word
         cur = cur->next;
     }
