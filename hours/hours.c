@@ -41,5 +41,6 @@ float calc_hours(int hours[], int weeks, char output)
         return total_hours;
     }
 
+    // Return the average hours per week
     return (float) total_hours / (float) weeks;
 }
