@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     // Create array to store plate numbers
     char *plates[8];
 
+    // Try to open the file
     FILE *infile = fopen(argv[1], "r");
     if (infile == NULL)
     {
