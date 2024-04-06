@@ -15,6 +15,7 @@ int main(void)
         hours[i] = get_int("Week %i HW Hours: ", i);
     }
 
+    // Ask which statistic we must print
     char output;
     do
     {
@@ -23,6 +24,7 @@ int main(void)
     }
     while (output != 'T' && output != 'A');
 
+    // Print the statistic asked
     printf("%.1f hours\n", calc_hours(hours, weeks, output));
 }
 
