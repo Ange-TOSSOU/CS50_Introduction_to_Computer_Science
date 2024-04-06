@@ -65,7 +65,7 @@ void print_type_of_card(long n)
     {
         // Calculate the two-first digits number
         int two_first = n / pow_10(digits - 2);
-        // Check if it is 34 or 37
+
         if (two_first == 34 || two_first == 37)
         {
             valid = checksum(n);
@@ -75,7 +75,9 @@ void print_type_of_card(long n)
     }
     else if (digits == 13)
     {
+        // Calculate the one-first digits number
         int one_first = n / pow_10(digits - 1);
+
         if (one_first == 4)
         {
             valid = checksum(n);
@@ -85,8 +87,12 @@ void print_type_of_card(long n)
     }
     else if (digits == 16)
     {
+        // Calculate the one-first digits number
         int one_first = n / pow_10(digits - 1);
+
+        // Calculate the two-first digits number
         int two_first = n / pow_10(digits - 2);
+        
         if (one_first == 4)
         {
             valid = checksum(n);
