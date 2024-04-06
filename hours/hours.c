@@ -9,6 +9,7 @@ int main(void)
     int weeks = get_int("Number of weeks taking CS50: ");
     int hours[weeks];
 
+    // Ask the number of hours for each week
     for (int i = 0; i < weeks; i++)
     {
         hours[i] = get_int("Week %i HW Hours: ", i);
