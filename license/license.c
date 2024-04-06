@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
         if (plates[i] == NULL)
         {
             printf("Memory allocation failed.\n");
+            // Clean memory for all previous allocations
             clean_memory(plates, i);
         }
     }
