@@ -44,14 +44,16 @@ bool prime(int number)
     if (number < 2)
         return false;
 
-    // Iterate through
+    // Iterate through integers between 1(exclusive) and sqrt(number)(inclusive).
     for (int i = 2; i * i <= number; ++i)
     {
+        // Check if it divide number
         if (number % i == 0)
         {
             return false;
         }
     }
 
+    // There is no divisor other than 1 and the number itself
     return true;
 }
