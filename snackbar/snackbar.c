@@ -110,6 +110,7 @@ void add_items(void)
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
+    // Iterate through each item in the menu
     for (int i = 0; i < NUM_ITEMS; i++)
     {
         if (strcmpnoncasesensetive(item, menu[i].item) == 0)
