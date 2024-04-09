@@ -14,6 +14,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // Check the length of the key
     int key_length = strlen(argv[1]);
     if (key_length != NBCHARACTERS)
     {
