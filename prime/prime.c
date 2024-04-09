@@ -26,7 +26,7 @@ int main(void)
     {
         printf("2\n");
     }
-    // Iterate through odd numbers which do not exceed max.
+    // Iterate through odd numbers between min(inclusive) and max(inclusive).
     for (int i = min / 2; 2 * i + 1 <= max; i++)
     {
         // Check if it's prime
@@ -40,9 +40,11 @@ int main(void)
 bool prime(int number)
 {
     // TODO
+    // All prime numbers are greater than 1.
     if (number < 2)
         return false;
 
+    // Iterate through
     for (int i = 2; i * i <= number; ++i)
     {
         if (number % i == 0)
