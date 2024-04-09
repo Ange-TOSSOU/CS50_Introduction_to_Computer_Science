@@ -21,13 +21,15 @@ int main(void)
     }
     while (min >= max);
 
-
+    // All prime numbers are odd except 2.
     if (min <= 2)
     {
         printf("2\n");
     }
+    // Iterate through odd numbers which do not exceed max.
     for (int i = min / 2; 2 * i + 1 <= max; i++)
     {
+        // Check if it's prime
         if (prime(2 * i + 1))
         {
             printf("%i\n", 2 * i + 1);
