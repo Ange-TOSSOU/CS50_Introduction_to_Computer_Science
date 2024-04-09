@@ -22,7 +22,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Check if the key contains only alphabetic characters
+    // Check that the key contains only alphabetic characters
     for (int i = 0; i < key_length; i++)
     {
         if (!isalpha(argv[1][i]))
@@ -32,6 +32,7 @@ int main(int argc, string argv[])
         }
     }
 
+    // Check that the key does not contain repeated characters
     int letters_appear[NBCHARACTERS] = {0}, index;
     for (int i = 0; i < key_length; i++)
     {
