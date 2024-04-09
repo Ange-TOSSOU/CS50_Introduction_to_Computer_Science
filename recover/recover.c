@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         // Verify if it is probably a beginning of a JPEG file
         if (is_jpeg(buffer))
         {
-            // Close an existing opened JPEG file
+            // Close the current opened JPEG file if exists
             if (f != NULL)
             {
                 fclose(f);
