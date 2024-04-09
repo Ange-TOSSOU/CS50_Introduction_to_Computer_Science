@@ -44,6 +44,7 @@ int count_letters(string text)
 
     int text_length = strlen(text), nb_letters = 0;
 
+    // Iterate through each character of the string
     for (int i = 0; i < text_length; i++)
     {
         if (isalpha(text[i]))
@@ -58,7 +59,7 @@ int count_letters(string text)
 int count_words(string text)
 {
     // Return the number of words in text
-    
+
     int nb_words = 0, text_length = strlen(text);
 
     // Delete spaces at the beginning of text
