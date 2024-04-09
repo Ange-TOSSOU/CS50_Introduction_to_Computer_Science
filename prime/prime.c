@@ -5,6 +5,7 @@ bool prime(int number);
 
 int main(void)
 {
+    // Get the minimum. It must be a non-positive integer.
     int min;
     do
     {
@@ -12,12 +13,14 @@ int main(void)
     }
     while (min < 1);
 
+    // Get the maximum. It must be an integer greater than the minimum.
     int max;
     do
     {
         max = get_int("Maximum: ");
     }
     while (min >= max);
+
 
     if (min <= 2)
     {
