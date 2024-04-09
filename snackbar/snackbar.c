@@ -50,6 +50,7 @@ int main(void)
     printf("\nWelcome to Beach Burger Shack!\n");
     printf("Choose from the following menu to order. Press enter when done.\n\n");
 
+    // Print the menu
     for (int i = 0; i < NUM_ITEMS; i++)
     {
         printf("%s: $%.2f\n", menu[i].item, menu[i].price);
