@@ -37,6 +37,7 @@ int main(void)
 int score(string word)
 {
     // Return the score of the word
+    
     int sc = 0, word_length = strlen(word);
     int value_of_letters[N] = {1, 3, 3, 2,  1, 4, 2, 4, 1, 8, 5, 1, 3,
                                1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
