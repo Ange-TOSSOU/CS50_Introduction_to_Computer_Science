@@ -66,6 +66,7 @@ int count_words(string text)
     int i;
     for (i = 0; i < text_length && text[i] == ' '; i++)
         ;
+        
     if (i == text_length)
     {
         text = NULL;
