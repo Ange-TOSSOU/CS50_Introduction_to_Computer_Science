@@ -41,6 +41,7 @@ int main(void)
 int count_letters(string text)
 {
     // Return the number of letters in text
+
     int text_length = strlen(text), nb_letters = 0;
 
     for (int i = 0; i < text_length; i++)
@@ -57,6 +58,7 @@ int count_letters(string text)
 int count_words(string text)
 {
     // Return the number of words in text
+    
     int nb_words = 0, text_length = strlen(text);
 
     // Delete spaces at the beginning of text
