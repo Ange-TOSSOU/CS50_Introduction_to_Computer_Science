@@ -66,13 +66,15 @@ int count_words(string text)
     int i;
     for (i = 0; i < text_length && text[i] == ' '; i++)
         ;
-        
+
     if (i == text_length)
     {
+        // The text contains no word
         text = NULL;
     }
     else
     {
+        // The text contains at least one word
         text += i;
         nb_words++;
     }
