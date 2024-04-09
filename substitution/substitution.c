@@ -22,6 +22,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // Check if the key contains only alphabetic characters
     for (int i = 0; i < key_length; i++)
     {
         if (!isalpha(argv[1][i]))
