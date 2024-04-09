@@ -115,8 +115,10 @@ int count_words(string text)
 int count_sentences(string text)
 {
     // Return the number of sentences in text
+
     int nb_sentences = 0, text_length = strlen(text);
 
+    // Iterate through each character of the string
     for (int i = 0; i < text_length; i++)
     {
         if (text[i] == '.' || text[i] == '!' || text[i] == '?')
