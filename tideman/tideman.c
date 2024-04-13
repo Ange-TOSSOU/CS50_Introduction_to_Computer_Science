@@ -196,6 +196,7 @@ bool loop_back(int end_index, int cur_index)
         // Search candidates over who cur_index is preferred
         if (pairs[i].winner != cur_index)
             continue;
+        // Check if it's possible to draw the arrow cur_index to pairs[i].loser
         if (locked[cur_index][pairs[i].loser])
         {
             if (pairs[i].loser == end_index)
