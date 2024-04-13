@@ -1,30 +1,23 @@
 #include <stdio.h>
 
-#include "lists_based.h"
+#include "arrays_based.h"
 
 int main(void)
 {
-    Stack *head = NULL;
+    Stack *s = create(10);
 
-    head = push(head, 1);
-    head = push(head, 2);
-    head = push(head, 7);
-    head = push(head, 11);
-    head = push(head, 11);
+    push(s, 1);
+    push(s, 2);
+    push(s, 7);
+    push(s, 11);
+    push(s, 11);
 
-    Stack *cur = head;
-    while (cur != NULL)
+    for (int i = s->top - 1; i >= 0 ; i--)
     {
-        printf("%i\n", cur->value);
-        cur = cur->next;
+        printf("%i\n", s->array[i]);
     }
 
-    printf("\n");
-
-    find(head, 10) ? printf("Found the value %i\n", 10) : printf("Not found the value %i\n", 10);
-    find(head, 11) ? printf("Found the value %i\n", 11) : printf("Not found the value %i\n", 11);
-
-    head = destroy(head);
+    s = destroy(s);
 
     return 0;
 }
