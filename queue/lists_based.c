@@ -44,8 +44,11 @@ Queue *push(Queue *head, int value)
     }
 
     Queue cur = head;
-    while ((cur = cur->next) != NULL);
-    cur->next = head;
+    while (cur->next != NULL)
+    {
+        cur = cur->next;
+    }
+    cur->next = n;
 
     return head;
 }
