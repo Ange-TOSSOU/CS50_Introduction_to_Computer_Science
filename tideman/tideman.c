@@ -130,6 +130,7 @@ void add_pairs(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
+        // Iterate through half of the matrix because of the symetry
         for (int j = 0; j < i; j++)
         {
             if (preferences[i][j] > preferences[j][i])
