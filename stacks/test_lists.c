@@ -4,15 +4,15 @@
 
 int main(void)
 {
-    Node *list = NULL;
+    Stack *head = NULL;
 
-    list = insert(list, 1);
-    list = insert(list, 2);
-    list = insert(list, 7);
-    list = insert(list, 11);
-    list = insert(list, 11);
+    head = push(head, 1);
+    head = push(head, 2);
+    head = push(head, 7);
+    head = push(head, 11);
+    head = push(head, 11);
 
-    Node *cur = list;
+    Stack *cur = head;
     while (cur != NULL)
     {
         printf("%i\n", cur->value);
@@ -21,10 +21,10 @@ int main(void)
 
     printf("\n");
 
-    find(list, 10) ? printf("Found the value %i\n", 10) : printf("Not found the value %i\n", 10);
-    find(list, 11) ? printf("Found the value %i\n", 11) : printf("Not found the value %i\n", 11);
+    find(head, 10) ? printf("Found the value %i\n", 10) : printf("Not found the value %i\n", 10);
+    find(head, 11) ? printf("Found the value %i\n", 11) : printf("Not found the value %i\n", 11);
 
-    list = destroy(list);
+    head = destroy(head);
 
     return 0;
 }
