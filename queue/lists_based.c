@@ -43,10 +43,11 @@ Queue *push(Queue *head, int value)
         return n;
     }
 
-    while (head->next != NULL)
-    n->next = head;
+    Queue cur = head;
+    while ((cur = cur->next) != NULL);
+    cur->next = head;
 
-    return n;
+    return head;
 }
 
 int pop(Queue *head)
