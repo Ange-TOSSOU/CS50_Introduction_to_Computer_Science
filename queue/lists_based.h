@@ -10,5 +10,4 @@ typedef struct stack
 Stack *create(int value);
 int find(Stack *head, int value);
 Stack *push(Stack *head, int value);
-Stack *push(Stack *head, int value);
 Stack *destroy(Stack *head);
