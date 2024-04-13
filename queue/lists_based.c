@@ -38,6 +38,12 @@ Queue *push(Queue *head, int value)
         return head;
     }
 
+    if (head == NULL)
+    {
+        return n;
+    }
+
+    while (head->next != NULL)
     n->next = head;
 
     return n;
