@@ -193,6 +193,7 @@ bool loop_back(int end_index, int cur_index)
     bool is_looping = false;
     for (int i = 0; i < pair_count; i++)
     {
+        // Search candidates over who cur_index is preferred
         if (pairs[i].winner != cur_index)
             continue;
         if (locked[cur_index][pairs[i].loser])
