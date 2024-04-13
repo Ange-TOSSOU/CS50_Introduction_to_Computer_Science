@@ -181,6 +181,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
+        // Ensure that the addition of the arrow will not create a loop
         if (!loop_back(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
@@ -196,9 +197,9 @@ bool loop_back(int end_index, int cur_index)
         // Search candidates over who cur_index is preferred
         if (pairs[i].winner != cur_index)
             continue;
-        // Check if it's possible to draw the arrow cur_index to pairs[i].loser
         if (locked[cur_index][pairs[i].loser])
         {
+            // Ensure that the addition of the arrow will not create a loop
             if (pairs[i].loser == end_index)
             {
                 return true;
