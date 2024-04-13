@@ -199,7 +199,7 @@ bool loop_back(int end_index, int cur_index)
             continue;
         if (locked[cur_index][pairs[i].loser])
         {
-            // Ensure that the addition of the arrow will not create a loop
+            // Ensure that the addition of the arrow will create any loop
             if (pairs[i].loser == end_index)
             {
                 return true;
