@@ -224,6 +224,7 @@ void print_winner(void)
         {
             if (locked[i][j])
             {
+                // There is at least an arrow pointing to j
                 is_winner = false;
                 break;
             }
