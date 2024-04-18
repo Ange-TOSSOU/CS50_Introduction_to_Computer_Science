@@ -7,12 +7,14 @@
 
 int main(int argc, string argv[])
 {
+    // Check for invalid usage
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
 
+    // Check the length of the key
     int key_length = strlen(argv[1]);
     if (key_length != NBCHARACTERS)
     {
@@ -20,6 +22,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // Check that the key contains only alphabetic characters
     for (int i = 0; i < key_length; i++)
     {
         if (!isalpha(argv[1][i]))
@@ -29,6 +32,7 @@ int main(int argc, string argv[])
         }
     }
 
+    // Check that the key does not contain repeated characters
     int letters_appear[NBCHARACTERS] = {0}, index;
     for (int i = 0; i < key_length; i++)
     {

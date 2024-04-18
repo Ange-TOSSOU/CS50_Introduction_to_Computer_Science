@@ -1,8 +1,8 @@
 #include "lists_based.h"
 
-Stack *create(int value)
+Queue *create(int value)
 {
-    Stack *n = malloc(sizeof(Stack));
+    Queue *n = malloc(sizeof(Queue));
 
     if (n != NULL)
     {
@@ -13,9 +13,9 @@ Stack *create(int value)
     return n;
 }
 
-int find(Stack *head, int value)
+int find(Queue *head, int value)
 {
-    Stack *current = head;
+    Queue *current = head;
 
     while (current != NULL)
     {
@@ -29,28 +29,38 @@ int find(Stack *head, int value)
     return 0;
 }
 
-Stack *push(Stack *head, int value)
+Queue *push(Queue *head, int value)
 {
-    Stack *n = create(value);
+    Queue *n = create(value);
 
     if (n == NULL)
     {
         return head;
     }
 
-    n->next = head;
+    if (head == NULL)
+    {
+        return n;
+    }
 
-    return n;
+    Queue cur = head;
+    while (cur->next != NULL)
+    {
+        cur = cur->next;
+    }
+    cur->next = n;
+
+    return head;
 }
 
-int pop(Stack *head)
+int pop(Queue *head)
 {
     if (head == NULL)
     {
         return 0;
     }
 
-    Stack *current = head;
+    Queue *current = head;
     int value = current->value;
     head = head->next;
     free(current);
@@ -58,7 +68,7 @@ int pop(Stack *head)
     return value;
 }
 
-Stack *destroy(Stack *head)
+Queue *destroy(Queue *head)
 {
     if (head == NULL)
     {

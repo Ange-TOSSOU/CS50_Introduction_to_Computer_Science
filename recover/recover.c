@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, sizeof(BYTE), JPEG_BLOCK_SIZE, card) == sizeof(BYTE) * JPEG_BLOCK_SIZE)
     {
-        // Verify if it is a beginning of a JPEG file
+        // Verify if it is probably a beginning of a JPEG file
         if (is_jpeg(buffer))
         {
-            // Close an existing opened JPEG file
+            // Close the current opened JPEG file if exists
             if (f != NULL)
             {
                 fclose(f);

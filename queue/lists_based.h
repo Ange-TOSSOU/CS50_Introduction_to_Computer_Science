@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct stack
+typedef struct queue
 {
     int value;
-    struct stack *next;
-} Stack;
+    struct queue *next;
+} Queue;
 
-Stack *create(int value);
-int find(Stack *head, int value);
-Stack *push(Stack *head, int value);
-Stack *push(Stack *head, int value);
-Stack *destroy(Stack *head);
+Queue *create(int value);
+int find(Queue *head, int value);
+Queue *push(Queue *head, int value);
+Queue *destroy(Queue *head);

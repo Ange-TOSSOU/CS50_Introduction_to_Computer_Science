@@ -71,6 +71,7 @@ void sort_cities(void)
         {
             if (temps[j].temp < temps[j + 1].temp)
             {
+                // Permute temps[j] and temps[j + 1]
                 tmp = temps[j];
                 temps[j] = temps[j + 1];
                 temps[j + 1] = tmp;

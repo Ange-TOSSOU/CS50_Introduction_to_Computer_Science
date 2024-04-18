@@ -9,8 +9,10 @@ int main(void)
 {
     string input = get_string("Enter a positive integer: ");
 
+    // Check if user's input consists only of digit character(s)
     for (int i = 0, n = strlen(input); i < n; i++)
     {
+        // Check if input[i] is a digit character
         if (!isdigit(input[i]))
         {
             printf("Invalid Input!\n");

@@ -65,8 +65,9 @@ Stack *destroy(Stack *head)
         return NULL;
     }
 
-    destroy(head->next);
+    Stack *next = head->next;
     free(head);
+    destroy(next);
 
     return NULL;
 }

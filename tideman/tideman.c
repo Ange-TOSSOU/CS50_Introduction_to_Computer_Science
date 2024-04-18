@@ -94,6 +94,7 @@ int main(int argc, string argv[])
     sort_pairs();
     lock_pairs();
     print_winner();
+
     return 0;
 }
 
@@ -118,6 +119,7 @@ void record_preferences(int ranks[])
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
+            // ranks[i] candidate is preferred over ranks[j] candidate
             preferences[ranks[i]][ranks[j]]++;
         }
     }
@@ -128,6 +130,7 @@ void add_pairs(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
+        // Iterate through half of the matrix because of the symetry
         for (int j = 0; j < i; j++)
         {
             if (preferences[i][j] > preferences[j][i])
@@ -178,6 +181,7 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
+        // Ensure that the addition of the arrow will not create a loop
         if (!loop_back(pairs[i].winner, pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
@@ -190,10 +194,12 @@ bool loop_back(int end_index, int cur_index)
     bool is_looping = false;
     for (int i = 0; i < pair_count; i++)
     {
+        // Search candidates over who cur_index is preferred
         if (pairs[i].winner != cur_index)
             continue;
         if (locked[cur_index][pairs[i].loser])
         {
+            // Ensure that the addition of the arrow will create any loop
             if (pairs[i].loser == end_index)
             {
                 return true;
@@ -218,6 +224,7 @@ void print_winner(void)
         {
             if (locked[i][j])
             {
+                // There is at least an arrow pointing to j
                 is_winner = false;
                 break;
             }

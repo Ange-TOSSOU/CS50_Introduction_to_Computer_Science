@@ -50,6 +50,7 @@ int main(void)
     printf("\nWelcome to Beach Burger Shack!\n");
     printf("Choose from the following menu to order. Press enter when done.\n\n");
 
+    // Print the menu
     for (int i = 0; i < NUM_ITEMS; i++)
     {
         printf("%s: $%.2f\n", menu[i].item, menu[i].price);
@@ -109,6 +110,7 @@ void add_items(void)
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
+    // Iterate through each item in the menu
     for (int i = 0; i < NUM_ITEMS; i++)
     {
         if (strcmpnoncasesensetive(item, menu[i].item) == 0)

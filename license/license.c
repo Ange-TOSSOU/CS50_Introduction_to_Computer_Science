@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
     // Create array to store plate numbers
     char *plates[8];
 
+    // Try to open the file
     FILE *infile = fopen(argv[1], "r");
     if (infile == NULL)
     {
@@ -33,6 +34,7 @@ int main(int argc, char *argv[])
         if (plates[i] == NULL)
         {
             printf("Memory allocation failed.\n");
+            // Clean memory for all previous allocations
             clean_memory(plates, i);
         }
     }
@@ -49,6 +51,7 @@ int main(int argc, char *argv[])
         idx++;
     }
 
+    // Print each license
     for (int i = 0; i < 8; i++)
     {
         printf("%s\n", plates[i]);
